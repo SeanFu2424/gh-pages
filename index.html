@@ -162,10 +162,18 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
 .banner.ok{background:var(--ok-bg);border-color:#a7f3d0;color:#065f46}
 .section-note{font-size:12.5px;color:var(--ink-3);margin:-4px 0 12px}
 
+/* 次要设置区（数据源）：沉到底部、视觉退后，不抢主流程 */
+.card.minor{background:#fcfdfe;border-color:#eef2f6;margin-top:22px}
+.card.minor .card-h{margin-bottom:10px}
+.card.minor .card-h h2{font-size:14px;font-weight:600;color:var(--ink-2)}
+.card.minor .card-h .ic{opacity:.7}
+
 @media (max-width:768px){
   .wrap{padding:12px 11px calc(96px + env(safe-area-inset-bottom))}
   .hd h1{font-size:17px}
-  .hd-actions{width:100%;margin-left:0}
+  .hd-actions{width:100%;margin-left:0;gap:6px}
+  .hd-actions .sm{min-height:34px;padding:0 9px;font-size:12.5px;border-radius:8px}
+  .hd-actions .sm .ic{width:15px;height:15px}
   .tabs{position:fixed;bottom:0;left:0;right:0;z-index:100;border-radius:0;margin:0;
     padding:6px 6px calc(6px + env(safe-area-inset-bottom));border-left:none;border-right:none;border-bottom:none;
     box-shadow:0 -2px 12px rgba(15,23,42,.07)}
@@ -200,6 +208,7 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
       <div class="sub" data-page-node-id="RdackgYZyGBjoThxbwifWG">数据自动归集 · 长期记忆本地化 · 一键生成教练简报</div>
     </div>
     <div class="hd-actions" data-page-node-id="vbtr6AFyfWDo5DEFaldMqr">
+      <button class="sm" id="btnGoSetup" title="连接设置 / 数据源"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-2.9 1.2 2 2 0 11-4 0 1.7 1.7 0 00-2.9-1.2l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.7 1.7 0 003 15a2 2 0 010-4 1.7 1.7 0 001.2-2.9l-.1-.1a2 2 0 112.8-2.8l.1.1A1.7 1.7 0 0010 4a2 2 0 014 0 1.7 1.7 0 002.9 1.2l.1-.1a2 2 0 112.8 2.8l-.1.1A1.7 1.7 0 0021 11a2 2 0 010 4z"/></svg>连接设置</button>
       <button class="sm" id="btnExport" data-page-node-id="v6QM3wRFTe79tBVAUVoRpk"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="W9WfJhMZSm93jIS4kB0NpQ"><path d="M12 3v12" data-page-node-id="QpCCgDz88IALHqyhR2fzHu"/><path d="M7 10l5 5 5-5" data-page-node-id="DNV2xAl3j9BnCv7sDcXDzB"/><path d="M4 21h16" data-page-node-id="2JKjiWxL2fYwd7ZCpdTlV0"/></svg>导出备份</button>
       <button class="sm" id="btnImport" data-page-node-id="BRwDXOnZnAAY8MfH30t1W5"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="bNWxsYy95ZUmP679Ip073Q"><path d="M12 15V3" data-page-node-id="nFK6yPLf0zhO3HV3Dq4NoV"/><path d="M7 8l5-5 5 5" data-page-node-id="SnFkKhgjDScpcyK38K2ERN"/><path d="M4 21h16" data-page-node-id="3fZQQUCCACDFDr9XRk8wZi"/></svg>导入恢复</button>
       <button class="sm" id="btnClearDemo" style="display:none" data-page-node-id="L5S9qf5PDIaLfbZlgzORfB">清空示例数据</button>
@@ -234,34 +243,6 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
   <!-- ============ PANE: 今日训练 ============ -->
   <div class="pane on" id="pane-ride" data-page-node-id="FMEAweSKf63gpE7tV2ZG22">
 
-    <div class="card" data-page-node-id="04s6ifxIOIAEt4EMrpmZmn">
-      <div class="card-h" data-page-node-id="WwT72l39Qi6k9DwDGDIvj0">
-        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="Fv5aLGX6IMcKypDAayn1LN"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" data-page-node-id="0b6w8ihQAiOM2e5Pt1aKDB"/><circle cx="12" cy="12" r="3" data-page-node-id="90ES9nSLzPjrlfNFSMypft"/></svg>
-        <h2 data-page-node-id="576CdJJreabe0QGi5bzjHC">数据源</h2>
-        <div class="right" data-page-node-id="dHgnThr2QVYQzgfhh4Fz0K">
-          <button class="tiny" id="btnToggleApi" data-page-node-id="ZIBoPTNXGkglQtrPjYFUp5"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="J8tdQkDS6I7di23S1hSIX5"><circle cx="12" cy="12" r="3" data-page-node-id="tJ0QzPmhXaGxnFQLZHpGyW"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-2.9 1.2 2 2 0 11-4 0 1.7 1.7 0 00-2.9-1.2l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.7 1.7 0 003 15a2 2 0 010-4 1.7 1.7 0 001.2-2.9l-.1-.1a2 2 0 112.8-2.8l.1.1A1.7 1.7 0 0010 4a2 2 0 014 0 1.7 1.7 0 002.9 1.2l.1-.1a2 2 0 112.8 2.8l-.1.1A1.7 1.7 0 0021 11a2 2 0 010 4z" data-page-node-id="3aw4NnQsLAfYJVSgG9fRAT"/></svg>连接设置</button>
-        </div>
-      </div>
-      <div id="apiBox" style="display:none" data-page-node-id="MHFUlIR7QtwQARs6BUsAmW">
-        <div class="banner info" data-page-node-id="JfUiTdMcDUj1ifzRrSG0hR">
-          <svg class="ic" style="margin-top:2px" viewBox="0 0 24 24" data-page-node-id="syqcNwvEipnECkm8tOSmy8"><circle cx="12" cy="12" r="9" data-page-node-id="huyzame3NjxiZvatwGtimW"/><path d="M12 16v-5M12 8h.01" data-page-node-id="yrJtY5LAT2Vr7k8nYnKbWo"/></svg>
-          <div data-page-node-id="6sKVj4ZxvgeaPgnyeCom06">在 intervals.icu → Settings 底部 <b data-page-node-id="Kn1f6Zu8ggBJCsA0TaaPhS">Developer Settings</b> 复制 API Key。密钥只保存在本机浏览器，不会上传。</div>
-        </div>
-        <div class="grid" data-page-node-id="JUoK9O98EIHg4iY8AVLFgJ">
-          <div class="f" data-page-node-id="Vh3S6zieH9btb8vc3YKraT"><label data-page-node-id="xX4Bn8SyTlOA7wJ87Hr7R2">API Key</label><input type="text" id="apiKey" placeholder="粘贴你的 API Key" autocomplete="off" data-page-node-id="Zfgtskh1VKukNinXo1Uut6"></div>
-          <div class="f" data-page-node-id="jfi5UaskY4Z8egP1YYUwf9"><label data-page-node-id="h4AClPJAFD714juUH8sHzW">Athlete ID（可留 0 自动识别）</label><input type="text" id="athleteId" placeholder="0" value="0" data-page-node-id="2Hl86QyWaoC2tkEzPtxHmq"></div>
-          <div class="f" data-page-node-id="cLViEYWxv0mXCBVtUbVNDd"><label data-page-node-id="NSnF8cwqlBNDgx4iyopXlZ">拉取起始日期</label><input type="date" id="pullStart" data-page-node-id="z3UBZOtLiaj1cxkKc5umAi"></div>
-          <div class="f" data-page-node-id="IWyJy2pcc8SwXj38XxP1UY"><label data-page-node-id="ESgVLWPZTFQWKK1wVBAf1D">拉取结束日期</label><input type="date" id="pullEnd" data-page-node-id="KMXe1p8fPFuuMQJZGTTsuZ"></div>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap" data-page-node-id="KSE3RYDZVtwSeJOmaC97vt">
-          <button class="primary sm" id="btnPull" data-page-node-id="IfDsEj4QYr99Cns72IEeGb"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="8Sr69dBljgYo6QAVE0HqwD"><path d="M21 12a9 9 0 11-3-6.7" data-page-node-id="pgt9z2UEuhw4vApTs9PCYL"/><path d="M21 3v6h-6" data-page-node-id="VcFDSadZHMNYxd0cNc7kXX"/></svg>拉取数据</button>
-          <button class="sm" id="btnTest" data-page-node-id="u5cynXDQB1xGVr63SFUz9L">测试连接</button>
-        </div>
-        <div class="hint" style="margin-top:8px" data-page-node-id="fzumHK4AvUl4LNunlUWRPO">拉取会合并活动与每日体能数据（CTL/ATL/TSB、体重、静息心率、HRV），按日期去重，不会覆盖你手动录入的内容。</div>
-      </div>
-      <div id="apiStatus" class="hint" data-page-node-id="s0Amfh3RJcn41ZSOymJ405"></div>
-    </div>
-
     <div class="card" data-page-node-id="8IxgnMg37HUQO9OF6qWLA1">
       <div class="card-h" data-page-node-id="PxW2tH4xq1qIZj01xF41dY">
         <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="LgGA80jwLBVQ8HecHU0Ue2"><path d="M5 3h14v18H5z" data-page-node-id="LkdZkKpbcQa1Z6ZBTEJnmT"/><path d="M9 7h6M9 11h6M9 15h4" data-page-node-id="aANNH9B92cB5jvXtrioNzN"/></svg>
@@ -283,15 +264,15 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
           <div class="f" data-page-node-id="Qge0FaG4kBYHSweNYU8KDi"><label data-page-node-id="YllDYbEv3cdlGYKedoFoL2">距离(km)</label><input type="number" id="mDist" inputmode="decimal" placeholder="32" data-page-node-id="eaHotKXJ6CGsrzlLOX3aqA"></div>
           <div class="f" data-page-node-id="4kQUH6tGdRviDCtr4ZeG0x"><label data-page-node-id="yQqw99Z2IptsaMEDSl4uKa">训练负荷 TSS</label><input type="number" id="mLoad" inputmode="decimal" placeholder="85" data-page-node-id="dJQAzNR4ivwA4CTESawdfT"></div>
           <div class="f" data-page-node-id="QBy6APzzi2yRXeKGK1pztn"><label data-page-node-id="gcpHjIlPkD8RcNNMswEgQ5">标准化功率 NP</label><input type="number" id="mNp" inputmode="decimal" placeholder="205" data-page-node-id="4EOXvG4jDTmKKHk42zpz16"></div>
-          <div class="f" data-page-node-id="irEpHRTYdvuGG7Xn7kn32C"><label data-page-node-id="gFUtbsUfRKrNOYECfmsOCG">平均功率</label><input type="number" id="mAp" inputmode="decimal" placeholder="178" data-page-node-id="OEF0g9LErM7ZO9jdq2ntft"></div>
-          <div class="f" data-page-node-id="EKBkZPz0iemQrb8gAfVLuA"><label data-page-node-id="uon0U7EEXYDxjSDIjVatap">做功(kJ)</label><input type="number" id="mKj" inputmode="decimal" placeholder="800" data-page-node-id="QhyC6iapYXlGyJjd6kVd1L"></div>
-          <div class="f" data-page-node-id="IXEdFEM8KySwaxIVzELzMk"><label data-page-node-id="pmgU2DrZx86sWJH2tzjezX">爬升(m)</label><input type="number" id="mEle" inputmode="decimal" placeholder="420" data-page-node-id="JzIQSEX2dFLt1dYYygEAKa"></div>
-          <div class="f" data-page-node-id="NCgsqJZdFMPiHyv2F0rjV1"><label data-page-node-id="X5wK2jRq0zFV2ZgCibMku9">平均心率</label><input type="number" id="mHr" inputmode="decimal" placeholder="142" data-page-node-id="Gin4Vicc3BjndR6mvlHvRh"></div>
-          <div class="f" data-page-node-id="o2jEwHJbFFwQBGxRJC5CBW"><label data-page-node-id="g180Jz874c2anTMkXUyPBy">最大心率</label><input type="number" id="mHrMax" inputmode="decimal" placeholder="178" data-page-node-id="hY09xR59pgfwEYTBYRwWw2"></div>
-          <div class="f" data-page-node-id="ZeH5qNFTQ3QtuTKpEEq8L1"><label data-page-node-id="bgzL972DCUSPJTTMzPMAAC">功率心率解耦(%)</label><input type="number" id="mDec" inputmode="decimal" placeholder="3.5" data-page-node-id="Bf5A2Pcf0h7j3JHNjsk7Fj"></div>
-          <div class="f" style="grid-column:1/-1"><button class="tiny" id="btnMoreDims" type="button">+ 更多维度（踏频/速度/变异性/效率/TRIMP/RPE，选填）</button></div>
+<div class="f" style="grid-column:1/-1"><button class="tiny" id="btnMoreDims" type="button">+ 更多维度（心率/爬升/平均功率/做功/踏频/速度/变异性/效率/TRIMP/RPE，选填）</button></div>
         </div>
         <div class="grid tight" id="mMoreDims" style="display:none;margin-top:8px">
+          <div class="f" data-page-node-id="NCgsqJZdFMPiHyv2F0rjV1"><label data-page-node-id="X5wK2jRq0zFV2ZgCibMku9">平均心率</label><input type="number" id="mHr" inputmode="decimal" placeholder="142" data-page-node-id="Gin4Vicc3BjndR6mvlHvRh"></div>
+          <div class="f" data-page-node-id="o2jEwHJbFFwQBGxRJC5CBW"><label data-page-node-id="g180Jz874c2anTMkXUyPBy">最大心率</label><input type="number" id="mHrMax" inputmode="decimal" placeholder="178" data-page-node-id="hY09xR59pgfwEYTBYRwWw2"></div>
+          <div class="f" data-page-node-id="IXEdFEM8KySwaxIVzELzMk"><label data-page-node-id="pmgU2DrZx86sWJH2tzjezX">爬升(m)</label><input type="number" id="mEle" inputmode="decimal" placeholder="420" data-page-node-id="JzIQSEX2dFLt1dYYygEAKa"></div>
+          <div class="f" data-page-node-id="irEpHRTYdvuGG7Xn7kn32C"><label data-page-node-id="gFUtbsUfRKrNOYECfmsOCG">平均功率</label><input type="number" id="mAp" inputmode="decimal" placeholder="178" data-page-node-id="OEF0g9LErM7ZO9jdq2ntft"></div>
+          <div class="f" data-page-node-id="EKBkZPz0iemQrb8gAfVLuA"><label data-page-node-id="uon0U7EEXYDxjSDIjVatap">做功(kJ)</label><input type="number" id="mKj" inputmode="decimal" placeholder="800" data-page-node-id="QhyC6iapYXlGyJjd6kVd1L"></div>
+          <div class="f" data-page-node-id="ZeH5qNFTQ3QtuTKpEEq8L1"><label data-page-node-id="bgzL972DCUSPJTTMzPMAAC">功率心率解耦(%)</label><input type="number" id="mDec" inputmode="decimal" placeholder="3.5" data-page-node-id="Bf5A2Pcf0h7j3JHNjsk7Fj"></div>
           <div class="f"><label>踏频(rpm)</label><input type="number" id="mCad" inputmode="decimal" placeholder="84"></div>
           <div class="f"><label>平均速度(km/h)</label><input type="number" id="mSpd" inputmode="decimal" placeholder="31.4"></div>
           <div class="f"><label>变异性 VI</label><input type="number" step="0.01" id="mVi" inputmode="decimal" placeholder="1.02"></div>
@@ -355,6 +336,34 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
         </div>
       </div>
       <div id="extractResult" style="margin-top:10px" data-page-node-id="H6rnCjb7PuSIxUxzXVYeD1"></div>
+    </div>
+
+    <div class="card minor" id="srcCard" data-page-node-id="04s6ifxIOIAEt4EMrpmZmn">
+      <div class="card-h" data-page-node-id="WwT72l39Qi6k9DwDGDIvj0">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="Fv5aLGX6IMcKypDAayn1LN"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" data-page-node-id="0b6w8ihQAiOM2e5Pt1aKDB"/><circle cx="12" cy="12" r="3" data-page-node-id="90ES9nSLzPjrlfNFSMypft"/></svg>
+        <h2 data-page-node-id="576CdJJreabe0QGi5bzjHC">数据源</h2>
+        <div class="right" data-page-node-id="dHgnThr2QVYQzgfhh4Fz0K">
+          <button class="tiny" id="btnToggleApi" data-page-node-id="ZIBoPTNXGkglQtrPjYFUp5"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="J8tdQkDS6I7di23S1hSIX5"><circle cx="12" cy="12" r="3" data-page-node-id="tJ0QzPmhXaGxnFQLZHpGyW"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-2.9 1.2 2 2 0 11-4 0 1.7 1.7 0 00-2.9-1.2l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.7 1.7 0 003 15a2 2 0 010-4 1.7 1.7 0 001.2-2.9l-.1-.1a2 2 0 112.8-2.8l.1.1A1.7 1.7 0 0010 4a2 2 0 014 0 1.7 1.7 0 002.9 1.2l.1-.1a2 2 0 112.8 2.8l-.1.1A1.7 1.7 0 0021 11a2 2 0 010 4z" data-page-node-id="3aw4NnQsLAfYJVSgG9fRAT"/></svg>连接设置</button>
+        </div>
+      </div>
+      <div id="apiBox" style="display:none" data-page-node-id="MHFUlIR7QtwQARs6BUsAmW">
+        <div class="banner info" data-page-node-id="JfUiTdMcDUj1ifzRrSG0hR">
+          <svg class="ic" style="margin-top:2px" viewBox="0 0 24 24" data-page-node-id="syqcNwvEipnECkm8tOSmy8"><circle cx="12" cy="12" r="9" data-page-node-id="huyzame3NjxiZvatwGtimW"/><path d="M12 16v-5M12 8h.01" data-page-node-id="yrJtY5LAT2Vr7k8nYnKbWo"/></svg>
+          <div data-page-node-id="6sKVj4ZxvgeaPgnyeCom06">在 intervals.icu → Settings 底部 <b data-page-node-id="Kn1f6Zu8ggBJCsA0TaaPhS">Developer Settings</b> 复制 API Key。密钥只保存在本机浏览器，不会上传。</div>
+        </div>
+        <div class="grid" data-page-node-id="JUoK9O98EIHg4iY8AVLFgJ">
+          <div class="f" data-page-node-id="Vh3S6zieH9btb8vc3YKraT"><label data-page-node-id="xX4Bn8SyTlOA7wJ87Hr7R2">API Key</label><input type="text" id="apiKey" placeholder="粘贴你的 API Key" autocomplete="off" data-page-node-id="Zfgtskh1VKukNinXo1Uut6"></div>
+          <div class="f" data-page-node-id="jfi5UaskY4Z8egP1YYUwf9"><label data-page-node-id="h4AClPJAFD714juUH8sHzW">Athlete ID（可留 0 自动识别）</label><input type="text" id="athleteId" placeholder="0" value="0" data-page-node-id="2Hl86QyWaoC2tkEzPtxHmq"></div>
+          <div class="f" data-page-node-id="cLViEYWxv0mXCBVtUbVNDd"><label data-page-node-id="NSnF8cwqlBNDgx4iyopXlZ">拉取起始日期</label><input type="date" id="pullStart" data-page-node-id="z3UBZOtLiaj1cxkKc5umAi"></div>
+          <div class="f" data-page-node-id="IWyJy2pcc8SwXj38XxP1UY"><label data-page-node-id="ESgVLWPZTFQWKK1wVBAf1D">拉取结束日期</label><input type="date" id="pullEnd" data-page-node-id="KMXe1p8fPFuuMQJZGTTsuZ"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap" data-page-node-id="KSE3RYDZVtwSeJOmaC97vt">
+          <button class="primary sm" id="btnPull" data-page-node-id="IfDsEj4QYr99Cns72IEeGb"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="8Sr69dBljgYo6QAVE0HqwD"><path d="M21 12a9 9 0 11-3-6.7" data-page-node-id="pgt9z2UEuhw4vApTs9PCYL"/><path d="M21 3v6h-6" data-page-node-id="VcFDSadZHMNYxd0cNc7kXX"/></svg>拉取数据</button>
+          <button class="sm" id="btnTest" data-page-node-id="u5cynXDQB1xGVr63SFUz9L">测试连接</button>
+        </div>
+        <div class="hint" style="margin-top:8px" data-page-node-id="fzumHK4AvUl4LNunlUWRPO">拉取会合并活动与每日体能数据（CTL/ATL/TSB、体重、静息心率、HRV），按日期去重，不会覆盖你手动录入的内容。</div>
+      </div>
+      <div id="apiStatus" class="hint" data-page-node-id="s0Amfh3RJcn41ZSOymJ405"></div>
     </div>
 
   </div>
@@ -1875,6 +1884,8 @@ function switchTab(name){
   for (var j = 0; j < panes.length; j++){
     panes[j].classList.toggle("on", panes[j].id === "pane-" + name);
   }
+  var tc = document.getElementById("todayCard");
+  if (tc) tc.style.display = (name === "ride") ? "" : "none";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -1972,6 +1983,15 @@ function bindStatic(){
   document.getElementById("btnToggleApi").addEventListener("click", function(){
     var b = document.getElementById("apiBox");
     b.style.display = (b.style.display === "none") ? "block" : "none";
+  });
+  document.getElementById("btnGoSetup").addEventListener("click", function(){
+    switchTab("ride");
+    var b = document.getElementById("apiBox");
+    b.style.display = "block";
+    var c = document.getElementById("srcCard");
+    setTimeout(function(){
+      if (c && c.scrollIntoView) c.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
   });
   document.getElementById("apiKey").addEventListener("change", function(){
     state.settings.apiKey = this.value.trim();
