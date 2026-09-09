@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="HpGfeMVDBvwBbI9fREYuDg">
+<head data-page-node-id="xMbT421OZLEJPI12FL7zQx">
+<meta charset="UTF-8" data-page-node-id="JC9l1bDdP8ZkdWCcmaH0bZ">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="e29HZugdR5wwTBgWzuGTh0">
+<meta name="theme-color" content="#0d9488">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22%E5%85%AC%E8%B7%AF%E8%BD%A6%20AI%20%E6%95%99%E7%BB%83%E5%8F%B0%22%2C%22short_name%22%3A%22AI%E6%95%99%E7%BB%83%E5%8F%B0%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f6f8fa%22%2C%22theme_color%22%3A%22%230d9488%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADu0lEQVR42u3dQW7jMBBEUV3A954DzH2T%2FSwySByS1cUX4O%2Fl1gOhSJT9vP7%2B%2BZBaegxBQEtAS0BLQAtoCWgJaAloCWgBLQEtAS0BLQEtoCWgJaAloCWgBbQEtAS0BLQEtICWgJaAloCWgBbQEtAS0BLQEtACWgJaAloCWkAbhICWgJaAloAW0BLQEtAS0BLQAloCWgJaAloCWkBLQEtAK72v%2FoBWBeRU1EDrx5CBVhXkRNRA623MQKsGchpqoEGuQg00zEA78TMRtH0eoC8FsPsPaKBH%2FMM3ATXQpaBXHRvQQG89%2BauPK32VBroE9M7jSUYNdNA%2FU6f%2FVswFaKBH3JUAGvgazN%2F5%2FEADXXXdDjTMo24RAg1zDWagga7CnPjOIdALMSc%2F8fPWt7Yjatt8D%2FSlq3PjPmWgYYYa6NmXGu8gBRromNV519ZOoBWJedKTO6AvudRYcR0MNNA1mIEG%2Bsilxuq7E0DDuwXzrlttt6%2FSQG%2B41Nh5zxhoiJetzjbdAw1z4ZZOoAdfakz5KgOgB8E8tTpPeYvk30fmQA%2FeYN%2BO%2BfZtp88NiL86Wav3T5yCcutuvedGyLs2A6W9DnUD7Afk75%2FERAxt7ylWgU5%2ByfTWVXkK6gdmmJtQP233gVc8gm6%2BxEh6KbgG9NQ3qRtW5enfNhoHOumRcBPmFY%2FBJ6COBz3pejNxXicu3a4FDfP6eZ36f%2BQ60C2Y0%2Bd1cu%2F1NaATN%2Bs0Yt4x7zTUcaDtafj9eZ18qaAetJV5%2F7xO3w4F2nUz0BNAN6zOKXc1Eq91E1A%2FVmegm1bpCNDJexwSQSe%2FZ3gN6Emrc8Kqc2JjVsNlx2N1%2FvnTtmnz2nUZBXQA5rQTdAJ0w2UH0G88aQMa6LhtoaknCGigl912awF9%2Bn400CGvbwEN9NZbOasfiOy%2BFXXyFbTpt%2B6uWaGnrThWaKC3I2icF9BOkHkBnfFC5a2gm8810EAD7QQBDXTo9zikHrd52Q9dd8zm5Y2VquM1L6CBBvq%2BDz3pOM0LaKCBhjr5%2BMzLd9tVHZt5%2BfZRcC49psdJysdsXkNApwxmAmbzKgF96s2QqaBvn9d1v4L1GvarTuY1EPQr9HcKp24Cunlefkl26BZN8xoC%2BuW3q82rDfSpkzQRs3kNAb3zRE2GbF7DQK88UU2QzWsY6N86Wc2IzWso6P%2BdvBvRmlcpaN0d0AJaAloCWgJaQEtAS0BLQEtAC2gJaAloCWgJaAEtAS0BLQEtAS2gJaAloCWgJaAFtAS0BLQEtAS0gJYG9AnpOvgpbvAK4AAAAABJRU5ErkJggg%3D%3D%22%2C%22sizes%22%3A%22180x180%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AI教练台">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADu0lEQVR42u3dQW7jMBBEUV3A954DzH2T/SwySByS1cUX4O/l1gOhSJT9vP7++ZBaegxBQEtAS0BLQAtoCWgJaAloCWgBLQEtAS0BLQEtoCWgJaAloCWgBbQEtAS0BLQEtICWgJaAloCWgBbQEtAS0BLQEtACWgJaAloCWkAbhICWgJaAloAW0BLQEtAS0BLQAloCWgJaAloCWkBLQEtAK72v/oBWBeRU1EDrx5CBVhXkRNRA623MQKsGchpqoEGuQg00zEA78TMRtH0eoC8FsPsPaKBH/MM3ATXQpaBXHRvQQG89+auPK32VBroE9M7jSUYNdNA/U6f/VswFaKBH3JUAGvgazN/5/EADXXXdDjTMo24RAg1zDWagga7CnPjOIdALMSc/8fPWt7Yjatt8D/Slq3PjPmWgYYYa6NmXGu8gBRromNV519ZOoBWJedKTO6AvudRYcR0MNNA1mIEG+silxuq7E0DDuwXzrlttt6/SQG+41Nh5zxhoiJetzjbdAw1z4ZZOoAdfakz5KgOgB8E8tTpPeYvk30fmQA/eYN+O+fZtp88NiL86Wav3T5yCcutuvedGyLs2A6W9DnUD7Afk75/ERAxt7ylWgU5+yfTWVXkK6gdmmJtQP233gVc8gm6+xEh6KbgG9NQ3qRtW5enfNhoHOumRcBPmFY/BJ6COBz3pejNxXicu3a4FDfP6eZ36f+Q60C2Y0+d1cu/1NaATN+s0Yt4x7zTUcaDtafj9eZ18qaAetJV5/7xO3w4F2nUz0BNAN6zOKXc1Eq91E1A/Vmegm1bpCNDJexwSQSe/Z3gN6Emrc8Kqc2JjVsNlx2N1/vnTtmnz2nUZBXQA5rQTdAJ0w2UH0G88aQMa6LhtoaknCGigl912awF9+n400CGvbwEN9NZbOasfiOy+FXXyFbTpt+6uWaGnrThWaKC3I2icF9BOkHkBnfFC5a2gm8810EAD7QQBDXTo9zikHrd52Q9dd8zm5Y2VquM1L6CBBvq+Dz3pOM0LaKCBhjr5+MzLd9tVHZt5+fZRcC49psdJysdsXkNApwxmAmbzKgF96s2QqaBvn9d1v4L1GvarTuY1EPQr9HcKp24Cunlefkl26BZN8xoC+uW3q82rDfSpkzQRs3kNAb3zRE2GbF7DQK88UU2QzWsY6N86Wc2IzWso6P+dvBvRmlcpaN0d0AJaAloCWgJaQEtAS0BLQEtAC2gJaAloCWgJaAEtAS0BLQEtAS2gJaAloCWgJaAFtAS0BLQEtAS0gJYG9AnpOvgpbvAK4AAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADu0lEQVR42u3dQW7jMBBEUV3A954DzH2T/SwySByS1cUX4O/l1gOhSJT9vP7++ZBaegxBQEtAS0BLQAtoCWgJaAloCWgBLQEtAS0BLQEtoCWgJaAloCWgBbQEtAS0BLQEtICWgJaAloCWgBbQEtAS0BLQEtACWgJaAloCWkAbhICWgJaAloAW0BLQEtAS0BLQAloCWgJaAloCWkBLQEtAK72v/oBWBeRU1EDrx5CBVhXkRNRA623MQKsGchpqoEGuQg00zEA78TMRtH0eoC8FsPsPaKBH/MM3ATXQpaBXHRvQQG89+auPK32VBroE9M7jSUYNdNA/U6f/VswFaKBH3JUAGvgazN/5/EADXXXdDjTMo24RAg1zDWagga7CnPjOIdALMSc/8fPWt7Yjatt8D/Slq3PjPmWgYYYa6NmXGu8gBRromNV519ZOoBWJedKTO6AvudRYcR0MNNA1mIEG+silxuq7E0DDuwXzrlttt6/SQG+41Nh5zxhoiJetzjbdAw1z4ZZOoAdfakz5KgOgB8E8tTpPeYvk30fmQA/eYN+O+fZtp88NiL86Wav3T5yCcutuvedGyLs2A6W9DnUD7Afk75/ERAxt7ylWgU5+yfTWVXkK6gdmmJtQP233gVc8gm6+xEh6KbgG9NQ3qRtW5enfNhoHOumRcBPmFY/BJ6COBz3pejNxXicu3a4FDfP6eZ36f+Q60C2Y0+d1cu/1NaATN+s0Yt4x7zTUcaDtafj9eZ18qaAetJV5/7xO3w4F2nUz0BNAN6zOKXc1Eq91E1A/Vmegm1bpCNDJexwSQSe/Z3gN6Emrc8Kqc2JjVsNlx2N1/vnTtmnz2nUZBXQA5rQTdAJ0w2UH0G88aQMa6LhtoaknCGigl912awF9+n400CGvbwEN9NZbOasfiOy+FXXyFbTpt+6uWaGnrThWaKC3I2icF9BOkHkBnfFC5a2gm8810EAD7QQBDXTo9zikHrd52Q9dd8zm5Y2VquM1L6CBBvq+Dz3pOM0LaKCBhjr5+MzLd9tVHZt5+fZRcC49psdJysdsXkNApwxmAmbzKgF96s2QqaBvn9d1v4L1GvarTuY1EPQr9HcKp24Cunlefkl26BZN8xoC+uW3q82rDfSpkzQRs3kNAb3zRE2GbF7DQK88UU2QzWsY6N86Wc2IzWso6P+dvBvRmlcpaN0d0AJaAloCWgJaQEtAS0BLQEtAC2gJaAloCWgJaAEtAS0BLQEtAS2gJaAloCWgJaAFtAS0BLQEtAS0gJYG9AnpOvgpbvAK4AAAAABJRU5ErkJggg==">
+<title>公路车 AI 教练台</title>
+<!-- 本工作台为本地方案：单文件 HTML + localStorage 存储，全内联零外链，离线可用 -->
+<style>
+:root{
+  --brand:#0d9488; --brand-d:#0f766e; --brand-l:#ccfbf1;
+  --ink:#0f172a; --ink-2:#475569; --ink-3:#94a3b8;
+  --line:#e2e8f0; --bg:#f6f8fa; --card:#ffffff;
+  --danger:#dc2626; --danger-bg:#fef2f2;
+  --warn:#d97706; --warn-bg:#fffbeb;
+  --ok:#059669; --ok-bg:#ecfdf5;
+  --blue:#2563eb; --purple:#7c3aed; --orange:#ea580c;
+  --r:14px; --r-s:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); font-size:15px; line-height:1.6;
+  -webkit-text-size-adjust:100%; padding-bottom:24px;
+}
+.wrap{max-width:980px;margin:0 auto;padding:16px 14px 100px}
+
+/* ---------- header ---------- */
+.hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--brand),var(--brand-d));
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.hd h1{font-size:19px;font-weight:700;letter-spacing:-.2px}
+.hd .sub{font-size:12px;color:var(--ink-3);font-weight:400}
+.hd-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+
+/* ---------- buttons ---------- */
+button{font-family:inherit;font-size:14px;cursor:pointer;border-radius:var(--r-s);border:1px solid var(--line);
+  background:#fff;color:var(--ink-2);min-height:44px;padding:0 14px;display:inline-flex;align-items:center;
+  justify-content:center;gap:6px;transition:.15s;font-weight:500}
+button:hover{border-color:var(--brand);color:var(--brand-d);background:#f0fdfa}
+button:active{transform:scale(.98)}
+button.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+button.primary:hover{background:var(--brand-d);color:#fff;border-color:var(--brand-d)}
+button.danger{color:var(--danger);border-color:#fecaca}
+button.danger:hover{background:var(--danger-bg);border-color:var(--danger);color:var(--danger)}
+button.sm{min-height:36px;padding:0 11px;font-size:13px;border-radius:8px}
+button.tiny{min-height:32px;padding:0 9px;font-size:12.5px;border-radius:8px}
+button svg{flex:0 0 auto}
+
+/* ---------- card ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.card-h{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.card-h h2{font-size:15.5px;font-weight:650}
+.card-h .cnt{font-size:12px;color:var(--ink-3);background:var(--bg);padding:1px 8px;border-radius:20px}
+.card-h .right{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
+.ic{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+
+/* ---------- today ---------- */
+#todayCard{border-color:#bfdbfe;background:linear-gradient(180deg,#f8fbff,#fff)}
+.todo{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border:1px solid var(--line);
+  border-radius:var(--r-s);margin-bottom:8px;background:#fff}
+.todo.over{border-color:#fecaca;background:var(--danger-bg)}
+.todo.warn{border-color:#fde68a;background:var(--warn-bg)}
+.todo .dot{width:8px;height:8px;border-radius:50%;background:var(--brand);margin-top:8px;flex:0 0 auto}
+.todo.over .dot{background:var(--danger)}
+.todo.warn .dot{background:var(--warn)}
+.todo .body{flex:1;min-width:0}
+.todo .t{font-weight:600;font-size:14.5px}
+.todo .d{font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.todo .acts{display:flex;gap:6px;flex-wrap:wrap;flex:0 0 auto}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;background:var(--bg);
+  color:var(--ink-2);border:1px solid var(--line);vertical-align:middle;margin-left:6px}
+.tag.red{background:var(--danger-bg);color:var(--danger);border-color:#fecaca}
+.tag.amber{background:var(--warn-bg);color:var(--warn);border-color:#fde68a}
+.tag.green{background:var(--ok-bg);color:var(--ok);border-color:#a7f3d0}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  padding:5px;margin-bottom:14px;overflow-x:auto}
+.tabs button{flex:1;border:none;background:transparent;min-width:88px;white-space:nowrap}
+.tabs button.on{background:var(--brand);color:#fff}
+.tabs button.on:hover{background:var(--brand-d);color:#fff}
+.pane{display:none}
+.pane.on{display:block}
+
+/* ---------- form ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.grid.tight{grid-template-columns:repeat(auto-fit,minmax(112px,1fr))}
+.f{display:flex;flex-direction:column;gap:4px}
+.f label{font-size:12px;color:var(--ink-2);font-weight:500}
+input,select,textarea{
+  font-family:inherit;font-size:16px;color:var(--ink);background:#fff;
+  border:1px solid var(--line);border-radius:9px;padding:10px 11px;width:100%;min-height:44px;
+  -webkit-appearance:none;appearance:none;outline:none;transition:.15s}
+textarea{min-height:88px;resize:vertical;line-height:1.55}
+input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(13,148,136,.12)}
+select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+.hint{font-size:12px;color:var(--ink-3);line-height:1.5}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+
+/* ---------- stat ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:9px;margin-bottom:12px}
+.stat{background:var(--bg);border-radius:var(--r-s);padding:10px 11px;border:1px solid transparent}
+.stat .k{font-size:11.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stat .v{font-size:19px;font-weight:700;letter-spacing:-.4px;margin-top:2px}
+.stat.mini{padding:8px 10px}
+.stat.mini .k{font-size:10.5px}
+.stat.mini .v{font-size:15px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+.tbl th{text-align:left;font-weight:600;color:var(--ink-3);font-size:11.5px;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--ink)}
+.tbl tbody tr:last-child td{border-bottom:none}
+.sec-t{font-size:12px;color:var(--ink-3);margin-bottom:4px}
+.stat .u{font-size:11px;color:var(--ink-3);font-weight:500;margin-left:2px}
+.stat.hl{background:var(--brand-l);border-color:#99f6e4}
+
+/* ---------- list ---------- */
+.row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.row .main{flex:1;min-width:0}
+.row .tt{font-weight:600;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .dd{font-size:12.5px;color:var(--ink-3)}
+.row .acts{display:flex;gap:6px;flex:0 0 auto}
+.empty{text-align:center;color:var(--ink-3);font-size:13.5px;padding:22px 10px;line-height:1.7}
+
+/* ---------- chart ---------- */
+.chart-box{width:100%;overflow:hidden}
+.chart-box svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* ---------- brief ---------- */
+#briefOut{width:100%;min-height:300px;font-size:13px;line-height:1.65;background:#0f172a;color:#e2e8f0;
+  border-radius:var(--r-s);padding:13px;border:none;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%) translateY(16px);
+  background:var(--ink);color:#fff;padding:11px 18px;border-radius:24px;font-size:14px;opacity:0;
+  pointer-events:none;transition:.25s;z-index:200;max-width:88vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ---------- modal ---------- */
+.mask{position:fixed;inset:0;background:rgba(15,23,42,.5);display:none;align-items:center;
+  justify-content:center;z-index:300;padding:16px}
+.mask.on{display:flex}
+.modal{background:#fff;border-radius:var(--r);padding:20px;max-width:400px;width:100%}
+.modal h3{font-size:16px;margin-bottom:8px}
+.modal p{font-size:14px;color:var(--ink-2);margin-bottom:16px}
+.modal .acts{display:flex;gap:8px;justify-content:flex-end}
+
+.banner{background:var(--warn-bg);border:1px solid #fde68a;color:#92400e;padding:10px 12px;
+  border-radius:var(--r-s);font-size:13px;margin-bottom:12px;display:flex;gap:8px;align-items:flex-start}
+.banner.info{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+.banner.ok{background:var(--ok-bg);border-color:#a7f3d0;color:#065f46}
+.section-note{font-size:12.5px;color:var(--ink-3);margin:-4px 0 12px}
+
+@media (max-width:768px){
+  .wrap{padding:12px 11px calc(96px + env(safe-area-inset-bottom))}
+  .hd h1{font-size:17px}
+  .hd-actions{width:100%;margin-left:0}
+  .tabs{position:fixed;bottom:0;left:0;right:0;z-index:100;border-radius:0;margin:0;
+    padding:6px 6px calc(6px + env(safe-area-inset-bottom));border-left:none;border-right:none;border-bottom:none;
+    box-shadow:0 -2px 12px rgba(15,23,42,.07)}
+  .tabs button{flex-direction:column;gap:2px;min-height:50px;font-size:11px;min-width:0;padding:0 4px}
+  .tabs button .ic{width:19px;height:19px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .grid.tight{grid-template-columns:repeat(2,1fr)}
+  .todo{flex-wrap:wrap}
+  .todo .acts{width:100%;padding-left:18px}
+  .row{flex-wrap:wrap}
+  .row .acts{width:100%;padding-left:0}
+  /* 今日卡片：一键拉取按钮在手机上独占一行、全宽、更好按 */
+  #todayCard .card-h{flex-wrap:wrap;gap:6px 8px}
+  #btnPullToday{width:100%;min-height:46px;justify-content:center;font-size:14px}
+  .todo .acts button{min-height:40px;padding:0 12px}
+}
+</style>
+</head>
+<body data-page-node-id="TapTWKCBl1i1vcDSc8jW4r">
+<div class="wrap" data-page-node-id="hmMrYo0oLxksIRPSLNrtRZ">
+
+  <div class="hd" data-page-node-id="dznQ8PLDvrQegp3D6y8Hz3">
+    <div class="logo" data-page-node-id="YdDdnzHHQkC6e8ueDbG2pI">
+      <svg class="ic" style="width:21px;height:21px;stroke:#fff" viewBox="0 0 24 24" data-page-node-id="S5ynhSRiOVuqytzik4cP9Y">
+        <circle cx="5.5" cy="17.5" r="3.5" data-page-node-id="TWmZ6nbhXY6gAga7rM2cpn"/><circle cx="18.5" cy="17.5" r="3.5" data-page-node-id="pXkQd9gU4SJpr8PKkQGQca"/>
+        <path d="M5.5 17.5L9 9h5l3.5 8.5" data-page-node-id="7dC5Ocs61nTHDjc7CSormC"/><path d="M9 9l2-4h3" data-page-node-id="CitveI5j5gj6ZgT0ALGwr1"/>
+      </svg>
+    </div>
+    <div data-page-node-id="BsdHM1PJt96JuWklMTvWhH">
+      <h1 data-page-node-id="yWxRypO0Gc2RpWJeTvZkYe">公路车 AI 教练台</h1>
+      <div class="sub" data-page-node-id="RdackgYZyGBjoThxbwifWG">数据自动归集 · 长期记忆本地化 · 一键生成教练简报</div>
+    </div>
+    <div class="hd-actions" data-page-node-id="vbtr6AFyfWDo5DEFaldMqr">
+      <button class="sm" id="btnExport" data-page-node-id="v6QM3wRFTe79tBVAUVoRpk"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="W9WfJhMZSm93jIS4kB0NpQ"><path d="M12 3v12" data-page-node-id="QpCCgDz88IALHqyhR2fzHu"/><path d="M7 10l5 5 5-5" data-page-node-id="DNV2xAl3j9BnCv7sDcXDzB"/><path d="M4 21h16" data-page-node-id="2JKjiWxL2fYwd7ZCpdTlV0"/></svg>导出备份</button>
+      <button class="sm" id="btnImport" data-page-node-id="BRwDXOnZnAAY8MfH30t1W5"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="bNWxsYy95ZUmP679Ip073Q"><path d="M12 15V3" data-page-node-id="nFK6yPLf0zhO3HV3Dq4NoV"/><path d="M7 8l5-5 5 5" data-page-node-id="SnFkKhgjDScpcyK38K2ERN"/><path d="M4 21h16" data-page-node-id="3fZQQUCCACDFDr9XRk8wZi"/></svg>导入恢复</button>
+      <button class="sm" id="btnClearDemo" style="display:none" data-page-node-id="L5S9qf5PDIaLfbZlgzORfB">清空示例数据</button>
+      <button class="sm danger" id="btnClear" data-page-node-id="NXspat08LhAdmWzfrxPpnJ">清空数据</button>
+      <input type="file" id="fileInput" accept=".json,application/json" style="display:none" data-page-node-id="utFwqt3KC597wDO1L6ObZY">
+    </div>
+  </div>
+
+  <div id="dataBanner" data-page-node-id="LCgz4qgkjfNm6bBQzQt4YR"></div>
+
+  <!-- ============ 今天要处理 ============ -->
+  <div class="card" id="todayCard" data-page-node-id="OX4nAn6CyOqWK8xIZICf7I">
+    <div class="card-h" data-page-node-id="Elvlabgw8jGJypWB38Nx5k">
+      <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="0PhWf4hTx8FEVM13YixpG9"><path d="M12 8v4l3 2" data-page-node-id="fJi71JhHOHzRLNWYOsLLFL"/><circle cx="12" cy="12" r="9" data-page-node-id="rrZQFPqfu5lKNWsJvwWHs5"/></svg>
+      <h2 data-page-node-id="rGiYKxhjVpJ9H6OlXpaagi">今天要处理</h2>
+      <span class="cnt" id="todayDate" data-page-node-id="r9flBKkqNKKtWtGW9ZDttT"></span>
+      <div class="right">
+        <button class="sm primary" id="btnPullToday"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg><span id="btnPullTodayTxt">拉取今日数据</span></button>
+      </div>
+    </div>
+    <div id="todayList" data-page-node-id="PRrgAK26X8PwoSKOCkUCLn"></div>
+  </div>
+
+  <!-- ============ tabs ============ -->
+  <div class="tabs" id="tabs" data-page-node-id="9q9UOuP3fB1EhSsBYmyYLh">
+    <button data-tab="ride" class="on" data-page-node-id="ATdMRFPJx8LMPeUnUv17Pp"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="0m3yDv6E5yFJZz6SZcnK2p"><circle cx="5.5" cy="17.5" r="3.5" data-page-node-id="TPpgdpQ29t473kQLIaVGK4"/><circle cx="18.5" cy="17.5" r="3.5" data-page-node-id="OIZUU2lMxwIKCZnyHnAwYT"/><path d="M5.5 17.5L9 9h5l3.5 8.5" data-page-node-id="vjJkpx1X0KzP4WDlga9rlq"/></svg>今日训练</button>
+    <button data-tab="trend" data-page-node-id="XG90OfEQMJjVC1Uvx8q3wi"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="gwMAoHF7uInJE1s3F6tfCW"><path d="M3 17l5-6 4 4 5-7 4 5" data-page-node-id="xZ3Ku4AdnZWo9RIHrFU2pU"/></svg>趋势看板</button>
+    <button data-tab="archive" data-page-node-id="U0Sr9AuPaxWETYyv9B4F1x"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="0DUFCkZP0PLxO15lTrwY4t"><path d="M4 5h16v16H4z" data-page-node-id="obC62wIvMyadQzj3Abw5R5"/><path d="M4 10h16" data-page-node-id="0nwmmC4bd63eZikoJGECC1"/><path d="M9 3v4M15 3v4" data-page-node-id="qeoqM4A7RRLFNcoK83uqDr"/></svg>教练档案</button>
+    <button data-tab="goal" data-page-node-id="0A4idWAuE4f5ibtEWqiH7c"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="1ci2YJOVa4M0Q9DCV5xXHA"><circle cx="12" cy="12" r="8" data-page-node-id="Mf5lpB2EfwvlEkynur9kDK"/><circle cx="12" cy="12" r="3.5" data-page-node-id="1HLUXEHu3sLp9I9ibSVx4c"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" data-page-node-id="pktzX9nYOcviKgLwSSlDC1"/></svg>目标计划</button>
+  </div>
+
+  <!-- ============ PANE: 今日训练 ============ -->
+  <div class="pane on" id="pane-ride" data-page-node-id="FMEAweSKf63gpE7tV2ZG22">
+
+    <div class="card" data-page-node-id="04s6ifxIOIAEt4EMrpmZmn">
+      <div class="card-h" data-page-node-id="WwT72l39Qi6k9DwDGDIvj0">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="Fv5aLGX6IMcKypDAayn1LN"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" data-page-node-id="0b6w8ihQAiOM2e5Pt1aKDB"/><circle cx="12" cy="12" r="3" data-page-node-id="90ES9nSLzPjrlfNFSMypft"/></svg>
+        <h2 data-page-node-id="576CdJJreabe0QGi5bzjHC">数据源</h2>
+        <div class="right" data-page-node-id="dHgnThr2QVYQzgfhh4Fz0K">
+          <button class="tiny" id="btnToggleApi" data-page-node-id="ZIBoPTNXGkglQtrPjYFUp5"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="J8tdQkDS6I7di23S1hSIX5"><circle cx="12" cy="12" r="3" data-page-node-id="tJ0QzPmhXaGxnFQLZHpGyW"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-2.9 1.2 2 2 0 11-4 0 1.7 1.7 0 00-2.9-1.2l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.7 1.7 0 003 15a2 2 0 010-4 1.7 1.7 0 001.2-2.9l-.1-.1a2 2 0 112.8-2.8l.1.1A1.7 1.7 0 0010 4a2 2 0 014 0 1.7 1.7 0 002.9 1.2l.1-.1a2 2 0 112.8 2.8l-.1.1A1.7 1.7 0 0021 11a2 2 0 010 4z" data-page-node-id="3aw4NnQsLAfYJVSgG9fRAT"/></svg>连接设置</button>
+        </div>
+      </div>
+      <div id="apiBox" style="display:none" data-page-node-id="MHFUlIR7QtwQARs6BUsAmW">
+        <div class="banner info" data-page-node-id="JfUiTdMcDUj1ifzRrSG0hR">
+          <svg class="ic" style="margin-top:2px" viewBox="0 0 24 24" data-page-node-id="syqcNwvEipnECkm8tOSmy8"><circle cx="12" cy="12" r="9" data-page-node-id="huyzame3NjxiZvatwGtimW"/><path d="M12 16v-5M12 8h.01" data-page-node-id="yrJtY5LAT2Vr7k8nYnKbWo"/></svg>
+          <div data-page-node-id="6sKVj4ZxvgeaPgnyeCom06">在 intervals.icu → Settings 底部 <b data-page-node-id="Kn1f6Zu8ggBJCsA0TaaPhS">Developer Settings</b> 复制 API Key。密钥只保存在本机浏览器，不会上传。</div>
+        </div>
+        <div class="grid" data-page-node-id="JUoK9O98EIHg4iY8AVLFgJ">
+          <div class="f" data-page-node-id="Vh3S6zieH9btb8vc3YKraT"><label data-page-node-id="xX4Bn8SyTlOA7wJ87Hr7R2">API Key</label><input type="text" id="apiKey" placeholder="粘贴你的 API Key" autocomplete="off" data-page-node-id="Zfgtskh1VKukNinXo1Uut6"></div>
+          <div class="f" data-page-node-id="jfi5UaskY4Z8egP1YYUwf9"><label data-page-node-id="h4AClPJAFD714juUH8sHzW">Athlete ID（可留 0 自动识别）</label><input type="text" id="athleteId" placeholder="0" value="0" data-page-node-id="2Hl86QyWaoC2tkEzPtxHmq"></div>
+          <div class="f" data-page-node-id="cLViEYWxv0mXCBVtUbVNDd"><label data-page-node-id="NSnF8cwqlBNDgx4iyopXlZ">拉取起始日期</label><input type="date" id="pullStart" data-page-node-id="z3UBZOtLiaj1cxkKc5umAi"></div>
+          <div class="f" data-page-node-id="IWyJy2pcc8SwXj38XxP1UY"><label data-page-node-id="ESgVLWPZTFQWKK1wVBAf1D">拉取结束日期</label><input type="date" id="pullEnd" data-page-node-id="KMXe1p8fPFuuMQJZGTTsuZ"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap" data-page-node-id="KSE3RYDZVtwSeJOmaC97vt">
+          <button class="primary sm" id="btnPull" data-page-node-id="IfDsEj4QYr99Cns72IEeGb"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="8Sr69dBljgYo6QAVE0HqwD"><path d="M21 12a9 9 0 11-3-6.7" data-page-node-id="pgt9z2UEuhw4vApTs9PCYL"/><path d="M21 3v6h-6" data-page-node-id="VcFDSadZHMNYxd0cNc7kXX"/></svg>拉取数据</button>
+          <button class="sm" id="btnTest" data-page-node-id="u5cynXDQB1xGVr63SFUz9L">测试连接</button>
+        </div>
+        <div class="hint" style="margin-top:8px" data-page-node-id="fzumHK4AvUl4LNunlUWRPO">拉取会合并活动与每日体能数据（CTL/ATL/TSB、体重、静息心率、HRV），按日期去重，不会覆盖你手动录入的内容。</div>
+      </div>
+      <div id="apiStatus" class="hint" data-page-node-id="s0Amfh3RJcn41ZSOymJ405"></div>
+    </div>
+
+    <div class="card" data-page-node-id="8IxgnMg37HUQO9OF6qWLA1">
+      <div class="card-h" data-page-node-id="PxW2tH4xq1qIZj01xF41dY">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="LgGA80jwLBVQ8HecHU0Ue2"><path d="M5 3h14v18H5z" data-page-node-id="LkdZkKpbcQa1Z6ZBTEJnmT"/><path d="M9 7h6M9 11h6M9 15h4" data-page-node-id="aANNH9B92cB5jvXtrioNzN"/></svg>
+        <h2 data-page-node-id="Jsq8U0cIjAk97dQbMB7QFu">本次骑行</h2>
+        <div class="right" data-page-node-id="GTJEtw15aqDaIcfHrojKP7">
+          <button class="primary sm" id="btnCopyRide"><svg class="ic" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"/></svg>复制本次骑行（含分段）</button>
+          <button class="tiny" id="btnManual" data-page-node-id="kLe0wkw1CsL9sjuhWs87Vl"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="jhh8QSuHYvfbYOUD4Vd2FZ"><path d="M12 5v14M5 12h14" data-page-node-id="wOtlOVD2a8aJiS3yAFkKYX"/></svg>手动补录</button>
+        </div>
+      </div>
+
+      <div id="rideView" data-page-node-id="EpQPUIJ1HxHtQdyY7sIrK1"></div>
+      <textarea id="rideOut" readonly style="display:none;margin-top:10px;min-height:200px"></textarea>
+
+      <div id="manualBox" style="display:none;margin-top:14px;border-top:1px solid var(--line);padding-top:14px" data-page-node-id="FqMMJZ72umLxFo3B8iOEqL">
+        <div class="grid tight" data-page-node-id="Agc1PLYuDL8dI6ZFfe66DC">
+          <div class="f" data-page-node-id="0a84kQ23rv27VRyp78NakU"><label data-page-node-id="mmluvm3QabSzCZDfoEj8rf">日期</label><input type="date" id="mDate" data-page-node-id="zgdJH5jbyFTT7bKOfWr6Id"></div>
+          <div class="f" data-page-node-id="7mtts9dgWQJhWznN1SFa2B"><label data-page-node-id="9b6xTV6ilOKS9IaoAHHwd8">名称</label><input type="text" id="mName" placeholder="如：间歇 5×4min" data-page-node-id="zxSxpy5ZHwBXXJUbwEKkFT"></div>
+          <div class="f" data-page-node-id="gyqmBBrtHC0pTWBFt0YBMi"><label data-page-node-id="6asGhoR2AVNLJcS5vxvGk5">时长(分钟)</label><input type="number" id="mDur" inputmode="decimal" placeholder="75" data-page-node-id="T9nUtbGRri0kxEABH9reDS"></div>
+          <div class="f" data-page-node-id="Qge0FaG4kBYHSweNYU8KDi"><label data-page-node-id="YllDYbEv3cdlGYKedoFoL2">距离(km)</label><input type="number" id="mDist" inputmode="decimal" placeholder="32" data-page-node-id="eaHotKXJ6CGsrzlLOX3aqA"></div>
+          <div class="f" data-page-node-id="4kQUH6tGdRviDCtr4ZeG0x"><label data-page-node-id="yQqw99Z2IptsaMEDSl4uKa">训练负荷 TSS</label><input type="number" id="mLoad" inputmode="decimal" placeholder="85" data-page-node-id="dJQAzNR4ivwA4CTESawdfT"></div>
+          <div class="f" data-page-node-id="QBy6APzzi2yRXeKGK1pztn"><label data-page-node-id="gcpHjIlPkD8RcNNMswEgQ5">标准化功率 NP</label><input type="number" id="mNp" inputmode="decimal" placeholder="205" data-page-node-id="4EOXvG4jDTmKKHk42zpz16"></div>
+          <div class="f" data-page-node-id="irEpHRTYdvuGG7Xn7kn32C"><label data-page-node-id="gFUtbsUfRKrNOYECfmsOCG">平均功率</label><input type="number" id="mAp" inputmode="decimal" placeholder="178" data-page-node-id="OEF0g9LErM7ZO9jdq2ntft"></div>
+          <div class="f" data-page-node-id="EKBkZPz0iemQrb8gAfVLuA"><label data-page-node-id="uon0U7EEXYDxjSDIjVatap">做功(kJ)</label><input type="number" id="mKj" inputmode="decimal" placeholder="800" data-page-node-id="QhyC6iapYXlGyJjd6kVd1L"></div>
+          <div class="f" data-page-node-id="IXEdFEM8KySwaxIVzELzMk"><label data-page-node-id="pmgU2DrZx86sWJH2tzjezX">爬升(m)</label><input type="number" id="mEle" inputmode="decimal" placeholder="420" data-page-node-id="JzIQSEX2dFLt1dYYygEAKa"></div>
+          <div class="f" data-page-node-id="NCgsqJZdFMPiHyv2F0rjV1"><label data-page-node-id="X5wK2jRq0zFV2ZgCibMku9">平均心率</label><input type="number" id="mHr" inputmode="decimal" placeholder="142" data-page-node-id="Gin4Vicc3BjndR6mvlHvRh"></div>
+          <div class="f" data-page-node-id="o2jEwHJbFFwQBGxRJC5CBW"><label data-page-node-id="g180Jz874c2anTMkXUyPBy">最大心率</label><input type="number" id="mHrMax" inputmode="decimal" placeholder="178" data-page-node-id="hY09xR59pgfwEYTBYRwWw2"></div>
+          <div class="f" data-page-node-id="ZeH5qNFTQ3QtuTKpEEq8L1"><label data-page-node-id="bgzL972DCUSPJTTMzPMAAC">功率心率解耦(%)</label><input type="number" id="mDec" inputmode="decimal" placeholder="3.5" data-page-node-id="Bf5A2Pcf0h7j3JHNjsk7Fj"></div>
+          <div class="f" style="grid-column:1/-1"><button class="tiny" id="btnMoreDims" type="button">+ 更多维度（踏频/速度/变异性/效率/TRIMP/RPE，选填）</button></div>
+        </div>
+        <div class="grid tight" id="mMoreDims" style="display:none;margin-top:8px">
+          <div class="f"><label>踏频(rpm)</label><input type="number" id="mCad" inputmode="decimal" placeholder="84"></div>
+          <div class="f"><label>平均速度(km/h)</label><input type="number" id="mSpd" inputmode="decimal" placeholder="31.4"></div>
+          <div class="f"><label>变异性 VI</label><input type="number" step="0.01" id="mVi" inputmode="decimal" placeholder="1.02"></div>
+          <div class="f"><label>效率 EF</label><input type="number" step="0.01" id="mEf" inputmode="decimal" placeholder="1.09"></div>
+          <div class="f"><label>TRIMP</label><input type="number" id="mTrimp" inputmode="decimal" placeholder="47"></div>
+          <div class="f"><label>RPE(1-10)</label><input type="number" id="mRpe" inputmode="decimal" placeholder="5"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap" data-page-node-id="ovdVMKJBYr7A9OVmymhMao">
+          <button class="primary sm" id="btnSaveManual" data-page-node-id="JxlUFSEuhfYGI1ZpfLeBfg">保存训练</button>
+          <button class="sm" id="btnCancelManual" data-page-node-id="iZI2Adk6AQUjotdaCtBAqy">取消</button>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:14px">
+        <div class="card-h" style="margin-bottom:8px">
+          <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24"><path d="M4 18h3M9.5 18h3M15 18h3"/><path d="M4 13h3M9.5 13h3M15 13h3"/><path d="M4 8h16"/></svg>
+          <h2>本次骑行的分段统计</h2>
+          <div class="right"><button class="tiny" id="btnFetchLaps">补拉分段</button></div>
+        </div>
+        <div id="intervalView"></div>
+      </div>
+    </div>
+
+    <div class="card" data-page-node-id="83FmsAW5aZ3QbTvcIvMMxG">
+      <div class="card-h" data-page-node-id="CzBvcTpU44yLBXGuruH7Dy">
+        <svg class="ic" style="stroke:var(--purple)" viewBox="0 0 24 24" data-page-node-id="rDjr8MTXAaJMFhfeX2puvC"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" data-page-node-id="SlbHFqN1ZE4NudLuYszPUv"/></svg>
+        <h2 data-page-node-id="t9YL8uKFIQntOlsXRhGk5g">AI 教练简报</h2>
+        <div class="right" data-page-node-id="d12RbxiczGWVQzsN59iSXv">
+          <button class="tiny" id="btnGenBrief" data-page-node-id="ljmpjaUeU6txtLuGNEZqYx"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="lhlluBWTl4qe647D19DBFa"><path d="M4 4h16v12H4z" data-page-node-id="9ANgkRkIsTMDnqW0UYFqWP"/><path d="M12 16v4M8 20h8" data-page-node-id="633DJn8uBbPuURKh8mhcjJ"/></svg>生成</button>
+          <button class="tiny" id="btnGenBrief2" style="display:none" data-page-node-id="cLJHJU5S7jBM9ak9lx5fR3">重新生成</button>
+          <button class="primary sm" id="btnCopyBrief" data-page-node-id="ifDz5wKTCqtVXyTD3sX578"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="700BDmBuT3wizB3Adf4nrY"><rect x="9" y="9" width="12" height="12" rx="2" data-page-node-id="dgTqZcs8v3VDAW7aQBBPKU"/><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1" data-page-node-id="dI1T4LS7OxKHEvL63JcTtV"/></svg>复制简报</button>
+        </div>
+      </div>
+      <p class="section-note" data-page-node-id="bP6zb29noe32MCCSXXWAzT">下面这段已经把「本次数据 + 近 4 周对比 + 当前体能状态 + 历史教练结论」全部拼好。复制后直接粘贴给 GPT / Claude 即可，<b data-page-node-id="qsDdIHdamdHS3wsSnibMLy">不用再截图、不用再 OCR</b>。</p>
+      <textarea id="briefOut" readonly placeholder="点击「生成」后，这里会出现一段可直接粘贴给 AI 教练的完整简报…"></textarea>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center" data-page-node-id="q7BNdbcLaPMyHLmHSY1fqR">
+        <span class="hint" id="briefMeta" data-page-node-id="iC7aNRpVHLaeslwGn7CMMv"></span>
+      </div>
+    </div>
+
+    <div class="card" data-page-node-id="vI4Ri1iOK7RCG5Eo21exDU">
+      <div class="card-h" data-page-node-id="1Xav7BVBbU5mtdfVbtGJ0f">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="VJJCQJqLyu03fxASV3gNyY"><path d="M12 3v12" data-page-node-id="0CLIEd0FcPi1U0Fx5ODBMg"/><path d="M7 10l5 5 5-5" data-page-node-id="ssFa3mDAeGx8gq6CrhK3qQ"/><path d="M4 21h16" data-page-node-id="IwfLIplHyh8YErDCmcozAN"/></svg>
+        <h2 data-page-node-id="grSHSSd07ZtJC4c7qEME4s">把 AI 的结论存回档案</h2>
+      </div>
+      <p class="section-note" data-page-node-id="dxnezzJvPSs94buIPoh0yD">简报里已要求 AI 输出「存档结论」。把它的回复粘进来，系统会自动抽出 <span class="mono" data-page-node-id="ok1H1igHzcuRMiiP7doTN2">- 日期：结论</span> 这类行并存入教练档案，<b data-page-node-id="1szqi3Nso32Ait9Dlk9aGu">下次生成简报时自动带上</b>——这就是不依赖任何模型 memory 的长期记忆闭环。</p>
+      <textarea id="pasteBack" placeholder="把 AI 的整段回复粘贴到这里…"></textarea>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap" data-page-node-id="VKYKfDgIMvHqahdhZd1yQO">
+        <button class="primary sm" id="btnExtract" data-page-node-id="cNEGTdKEB9XZ9Jqso5EwGZ"><svg class="ic" viewBox="0 0 24 24" data-page-node-id="YhKqN5kQqIsWSerBLIsSk2"><path d="M20 6L9 17l-5-5" data-page-node-id="zwBY5BBpWToJgTv6DwbEvq"/></svg>提取并存入档案</button>
+        <button class="sm" id="btnAddManualNote" data-page-node-id="mLEJnbsT1llcmJCkoHIbPq">手动添加一条结论</button>
+      </div>
+      <div id="noteAddBox" style="display:none;margin-top:10px;border-top:1px solid var(--line);padding-top:12px" data-page-node-id="7m423Py8Xc32az5wOTMfnj">
+        <div class="grid" data-page-node-id="wyRGUgGPCsJ51CBXmezLwb">
+          <div class="f" style="grid-column:1/-1" data-page-node-id="ELIBjVoMkEPlwOVOnJHrRQ"><label data-page-node-id="jFtFEoJ48zoNjACtEl8t71">结论内容</label><input type="text" id="nTitle" placeholder="如：周三强度课后周四必须恢复骑" data-page-node-id="DG6QL3JwsDxKaBAeryXic4"></div>
+          <div class="f" data-page-node-id="JXXxHT05Ai6SbDthIEDBA6"><label data-page-node-id="nFVIdIVjWFHV7fWHJ3kpLY">日期</label><input type="date" id="nDate" data-page-node-id="MnCyhNyYQmDj4zZV60ZoIN"></div>
+          <div class="f" data-page-node-id="5XkE9wOtcIEtDzWQl3DiFc"><label data-page-node-id="wmJoHi4Qi2mT5BL8tVbSFA">分类</label><select id="nTag" data-page-node-id="pJloUCUzDxCd6mufoSo6jI"><option data-page-node-id="1184tIMYvEiXt6urSltJPR">手动</option><option data-page-node-id="owEwsxJQN0sP2rwAYhVukY">AI 结论</option><option data-page-node-id="k2f2AsODCp3SuKyRbmEVD7">训练</option><option data-page-node-id="Pv2nqonc810OxabdVPZFvM">营养</option><option data-page-node-id="Le8g9XhGrE0mT26NjH3gtz">恢复</option><option data-page-node-id="U00kOYqGJuDLdZ6ObGNLQh">装备</option><option data-page-node-id="yj6GYoRs0jZ3QcGujftNFE">规则</option></select></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap" data-page-node-id="IWmakehibHXYJ4e673WAFy">
+          <button class="primary sm" id="btnSaveNote" data-page-node-id="7dVipnV44UOu8mBDFiI1TP">保存到档案</button>
+          <button class="sm" id="btnCancelNote" data-page-node-id="RW7ETCFDbUoXyANe22DtrS">取消</button>
+        </div>
+      </div>
+      <div id="extractResult" style="margin-top:10px" data-page-node-id="H6rnCjb7PuSIxUxzXVYeD1"></div>
+    </div>
+
+  </div>
+
+  <!-- ============ PANE: 趋势 ============ -->
+  <div class="pane" id="pane-trend" data-page-node-id="E6FAfFhc01kQ6acHzVWw3c">
+    <div class="card" data-page-node-id="SPjTpOBMkgcJwKykrb5glM">
+      <div class="card-h" data-page-node-id="naMXw6iTlKch81hfvgvS7M">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="OhlHSjUwlvdkxMLkTCpl1P"><path d="M3 17l5-6 4 4 5-7 4 5" data-page-node-id="Nm6TyMeNL07CZ7L8RMETaj"/></svg>
+        <h2 data-page-node-id="43UfUqjL9s5wu2y1UwATz4">体能 / 疲劳 / 状态</h2>
+        <span class="cnt" id="trendRange" data-page-node-id="3aAI7RyEm7Ba1eUCTaOQ77"></span>
+      </div>
+      <div class="chart-box" id="trendChart" data-page-node-id="qOOoOGEnbAr2pIbmBlUsXp"></div>
+      <div class="legend" data-page-node-id="ydJUWuhvBaqyoAfxC1vP84">
+        <span data-page-node-id="Xcxo4Dk0pulsf3kCatddIU"><i style="background:#0d9488" data-page-node-id="CrgGBeMeTFRiN7M377SbZW"></i>CTL 体能</span>
+        <span data-page-node-id="Z3dZt52BakbpywFQBT6OoA"><i style="background:#ea580c" data-page-node-id="v2ykor1BYjIkQuBakT3kkj"></i>ATL 疲劳</span>
+        <span data-page-node-id="oKXFEqSVaOjPLEe8rsOb6J"><i style="background:#7c3aed" data-page-node-id="rlY0rVGZHIw8c3xdqLuIhn"></i>TSB 状态</span>
+      </div>
+      <div id="statusVerdict" style="margin-top:12px" data-page-node-id="CoQZ7FbMiPOCAncxsjn1VP"></div>
+    </div>
+
+    <div class="card" data-page-node-id="OF0kbM3QKuK7Ag6FfilPsA">
+      <div class="card-h" data-page-node-id="QEPrYoqaV39EmmOtp8XEWP">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="JMAuFerTn07Qy2j9XZCp6V"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" data-page-node-id="YzcZ5z69m6V1szz4vaWl2S"/></svg>
+        <h2 data-page-node-id="bbe6I1KFe05Jkzd4EMZLAb">近 8 周训练负荷</h2>
+      </div>
+      <div class="chart-box" id="loadChart" data-page-node-id="Zr8rqvpOB6pPpqClphM6pp"></div>
+      <div id="loadSummary" style="margin-top:10px" data-page-node-id="Nwp9SybSAEcIEzlOJhxTel"></div>
+    </div>
+
+    <div class="card" data-page-node-id="k54ZJ94gt20qTtxFBkAIhU">
+      <div class="card-h" data-page-node-id="Mf81yqpEJQVEZ3rsqabFKc"><svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="ph8FCtftt8yGloFiIC1k4C"><path d="M4 6h16M4 12h16M4 18h12" data-page-node-id="BQw9ouuebT0qvbzKB9yH4N"/></svg><h2 data-page-node-id="sf0Rgwj7JQbxGs7VG3uq75">近期训练记录</h2><span class="cnt" id="actCount" data-page-node-id="SFsiAr4JUCw2tNCqSlO5nr"></span></div>
+      <div id="activityList" data-page-node-id="GnvOWHXTDgLdIAw0fm4CNH"></div>
+    </div>
+  </div>
+
+  <!-- ============ PANE: 档案 ============ -->
+  <div class="pane" id="pane-archive" data-page-node-id="46MY93Up7Eug8SNJU7Vogp">
+    <div class="card" data-page-node-id="rX0F6YcqpwCpBaKFGY1IsA">
+      <div class="card-h" data-page-node-id="zOgVODS8rUcfYa12wwisIM">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="cqG29pZvPXgnWbTJTu1PfA"><path d="M3 17l6-6 4 4 8-8" data-page-node-id="lX3FIu7x9wTckwCskOluYM"/><path d="M21 7v6h-6" data-page-node-id="8Sw7mmH7gku1KCZWU0sPcU"/></svg>
+        <h2 data-page-node-id="IrsVNja0xX9ZZJOBNQfKyX">FTP / 功率体重比演变</h2>
+        <div class="right" data-page-node-id="8tUFg4zn4yZZcH5Ow5X3rR"><button class="tiny" id="btnAddFtp" data-page-node-id="NjR3SS1tznf0EKYnEMtAwf">记录 FTP</button></div>
+      </div>
+      <div id="ftpBox" style="display:none;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:12px" data-page-node-id="zmfnEdLmyB4ynzrXFm2SFr">
+        <div class="grid tight" data-page-node-id="9BT19CdA1YxHnV1cTnDksx">
+          <div class="f" data-page-node-id="IvglQDIJWEDnL5BpKfasPc"><label data-page-node-id="ZWBaFUKFIZDk6A6wEwiRhv">日期</label><input type="date" id="fDate" data-page-node-id="5XQUeATE1MawKv64p7wLAI"></div>
+          <div class="f" data-page-node-id="MkbnB8jfB0mj37UCkXo5vm"><label data-page-node-id="rlXdBzCCQgFknbHCDfQODq">FTP (W)</label><input type="number" id="fFtp" inputmode="decimal" placeholder="245" data-page-node-id="n4JE2gEJDSsKZpNgCvZrPa"></div>
+          <div class="f" data-page-node-id="PEj1vHs7bEiANJqLrpyzeh"><label data-page-node-id="6RlfTWTCB6sw3UIZVQ9cVF">体重 (kg)</label><input type="number" id="fWeight" inputmode="decimal" placeholder="68" data-page-node-id="nc9yz1BlaoodEDjrMnk7E2"></div>
+          <div class="f" data-page-node-id="lWsYVp1pCBYfiYLDp22M4R"><label data-page-node-id="RxhcaQoqCTEanmVIP90s9Z">来源</label><select id="fSrc" data-page-node-id="uNityVKRCUQLZqc7meQFTh"><option data-page-node-id="2x1ePvHJzl8mZBkYfaTc3O">20分钟测试</option><option data-page-node-id="akUhCBjg2wKbQwUsMdsTbC">斜坡测试</option><option data-page-node-id="e3iglAtZ58eAF3UpnbyOUO">intervals.icu eFTP</option><option data-page-node-id="ubgU6kY0U4j3qxY2oOSvS9">比赛反推</option><option data-page-node-id="o3POo8BSc1LFCgrHFGApEO">估算</option></select></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px" data-page-node-id="BCcLDPlr5aBK3uu9ijhIVV"><button class="primary sm" id="btnSaveFtp" data-page-node-id="fFNN2vzM533aNqQl2GuTLn">保存</button><button class="sm" id="btnCancelFtp" data-page-node-id="ucS2tvGxdaqEQkfEl8XgRu">取消</button></div>
+      </div>
+      <div id="ftpTrend" data-page-node-id="c2YXRtBR6YYlI6uT8ClyDB"></div>
+    </div>
+
+    <div class="card" data-page-node-id="0CMnTuUWNvIAezjXuNWlgD">
+      <div class="card-h" data-page-node-id="9auz2kwSW5J5OnQX1GCXGx">
+        <svg class="ic" style="stroke:var(--purple)" viewBox="0 0 24 24" data-page-node-id="ayIJXmNxjnw9XjMHIN0JHd"><path d="M12 3l2.2 5.6L20 9.5l-4.3 3.9 1.2 5.9L12 16.4 7.1 19.3l1.2-5.9L4 9.5l5.8-.9z" data-page-node-id="gmBFEjzCC30TyGnwbqu8SF"/></svg>
+        <h2 data-page-node-id="gg8aaEWVBzwZ8GpLkFmjnt">教练结论（长期记忆）</h2>
+        <span class="cnt" id="noteCount" data-page-node-id="z5dMPrYM1KuFykPKplDCOM"></span>
+      </div>
+      <p class="section-note" data-page-node-id="jMZrn1xBXvdxhyXR2q9Jjx">这里的每一条都会自动进入下一次 AI 简报的「历史教练结论」区，让 AI 持续遵守并迭代，而不是每次从零开始。</p>
+      <div id="noteList" data-page-node-id="iTJaRz2GUQ5DMo1iHVRBqq"></div>
+    </div>
+
+    <div class="card" data-page-node-id="MTADsNwpDxGesx3GHLHlKQ">
+      <div class="card-h" data-page-node-id="GnUAExRaKy48bMDB01izEf">
+        <svg class="ic" style="stroke:var(--danger)" viewBox="0 0 24 24" data-page-node-id="QaoBeJ9ktjwnlxdo68wHCU"><path d="M12 9v5M12 17.5h.01" data-page-node-id="pEBDYCiGCWtlUWXwUApm9R"/><path d="M10.3 3.9L2.4 18a2 2 0 001.7 3h15.8a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" data-page-node-id="Bp1GGFpZWdGFvcspGcGDWQ"/></svg>
+        <h2 data-page-node-id="b4F3VMmGmKsRGHMTeUPCyi">身体状态 / 伤病</h2>
+        <div class="right" data-page-node-id="B0qO1xFfe1deAqznQhAk5g"><button class="tiny" id="btnAddInjury" data-page-node-id="I78KjdEm2DsCLVTKd7hnrj">添加记录</button></div>
+      </div>
+      <div id="injuryBox" style="display:none;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:12px" data-page-node-id="aG5HAfgSDnuvbF8vFAfeR1">
+        <div class="grid" data-page-node-id="KfCIVfZfEMQYeTluE7T4R3">
+          <div class="f" data-page-node-id="p9c4nK0GhGPaBK5udkqiD8"><label data-page-node-id="JBGOsMSBHwXWjUbklRoPWJ">日期</label><input type="date" id="iDate" data-page-node-id="eU15uJz9bEfwxsbG0us3sv"></div>
+          <div class="f" data-page-node-id="boCH3gkAwbCnHiVNJjX08p"><label data-page-node-id="D4Iiep6EuHGEdrkwH4IMM6">部位 / 类型</label><input type="text" id="iPart" placeholder="如：左膝 / 睡眠不足" data-page-node-id="ASSqXAA5rpgK6lVZycVI58"></div>
+          <div class="f" style="grid-column:1/-1" data-page-node-id="vcQHkM9gGbbavcI6enl6l4"><label data-page-node-id="dpVxvniovbeeCphu416qDU">说明</label><input type="text" id="iDesc" placeholder="程度、诱因、处理方式" data-page-node-id="azKk5F1wk6tSnzAZiYHCq9"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px" data-page-node-id="yB0wHnVmz0a53k7b3PItOL"><button class="primary sm" id="btnSaveInjury" data-page-node-id="nUgGnAuyY89uCnjs8AEW4O">保存</button><button class="sm" id="btnCancelInjury" data-page-node-id="GBWQnc76qqkANqcbsS5BCk">取消</button></div>
+      </div>
+      <div id="injuryList" data-page-node-id="0GuY73DTBSRGaTRlGwUYHU"></div>
+    </div>
+  </div>
+
+  <!-- ============ PANE: 目标 ============ -->
+  <div class="pane" id="pane-goal" data-page-node-id="89oqcRQbKLGVWe8irSqx55">
+    <div class="card" data-page-node-id="4yaBzZaNJkNW7b9fBukcDL">
+      <div class="card-h" data-page-node-id="gbzPRGf9or9Hl8EEdIf2hr">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="4EysADBKIbchcG6KmXdzgc"><circle cx="12" cy="12" r="8" data-page-node-id="GlNxBCYC88Fexd63GTftXS"/><circle cx="12" cy="12" r="3.5" data-page-node-id="6odAZQ5xQ01SiSTDnWJstP"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" data-page-node-id="DpGk8KlH1K0RWgUWDbU2JL"/></svg>
+        <h2 data-page-node-id="qR5fTnEeT3xm2e8YgFJTnx">训练目标</h2>
+        <div class="right" data-page-node-id="5HGJwLR0FjGPXcJmp1JFgf"><button class="tiny" id="btnAddGoal" data-page-node-id="g6VVlclFsrkxIZ3AZIfC0c">新增目标</button></div>
+      </div>
+      <div id="goalBox" style="display:none;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:12px" data-page-node-id="08UlVESXtgc0XNu27sZYat">
+        <div class="grid" data-page-node-id="ZFGqaGY3g8tu3S2FT3GbdY">
+          <div class="f" data-page-node-id="b3afd1pNw73p2bcBZOrQjq"><label data-page-node-id="exDRsvnoFdlgCzLHHLrBhs">目标名称</label><input type="text" id="gTitle" placeholder="如：环太湖 120km" data-page-node-id="6Hds3mqkjBiPwEkjeb7p72"></div>
+          <div class="f" data-page-node-id="0j2y4acwrVyiNIWx16M5cg"><label data-page-node-id="7mPusuFDYIWiMoLCxY3boc">类型</label><select id="gType" data-page-node-id="r6Df22OMPWVMjaFOi0EgHy"><option data-page-node-id="8ub1BwqNrhfE0fqKTJtJjx">赛事</option><option data-page-node-id="yPEJouPBN6RaF46rRDfwP0">功率目标</option><option data-page-node-id="XesOllHWwwh2qzXkICZjE9">体重目标</option><option data-page-node-id="kGDuT5uUUxuTVVzRcqkuLI">里程目标</option></select></div>
+          <div class="f" data-page-node-id="BpO0EQNDIkLk84k1k9ChGl"><label data-page-node-id="q9lsD21bKzhbsDJ8WMGyLK">目标日期</label><input type="date" id="gDate" data-page-node-id="dqvv7isD36TRoDnPQrNpDX"></div>
+          <div class="f" data-page-node-id="lsrELyfF0W2ImBgOVIYgek"><label data-page-node-id="Uqrp5NlLRqAEkWcbmNVJVs">量化目标</label><input type="text" id="gTarget" placeholder="如：FTP 260W" data-page-node-id="Y1ypt7t2WM64jvK2b3sLf4"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px" data-page-node-id="vHLcvgk5TPlSaXvJxbUes7"><button class="primary sm" id="btnSaveGoal" data-page-node-id="Z62iiJliZB9EMQBQm5QtBc">保存</button><button class="sm" id="btnCancelGoal" data-page-node-id="AwZXAfkwZBXyDdFz4RqdDj">取消</button></div>
+      </div>
+      <div id="goalList" data-page-node-id="ezOTEYOUWqr2AVs2i7tAqW"></div>
+    </div>
+
+    <div class="card" data-page-node-id="e9bJ5HYsvg1TeAp0mCXrTs">
+      <div class="card-h" data-page-node-id="ZT9xWEHrWnvdSEXlUeKbZz">
+        <svg class="ic" style="stroke:var(--brand)" viewBox="0 0 24 24" data-page-node-id="FLJ3AIhGE2zdWDVYjZhuIm"><rect x="3" y="5" width="18" height="16" rx="2" data-page-node-id="8ZBQ0SAtiq6p1KGQK7NWwN"/><path d="M3 10h18M8 3v4M16 3v4" data-page-node-id="C4uDbqNLxkkl4GxlwKypqR"/></svg>
+        <h2 data-page-node-id="OAu6ZlW9BhbYOL68G0maai">本周计划 vs 实际</h2>
+        <div class="right" data-page-node-id="02aE1dEIugIumrpmDRlzNP"><button class="tiny" id="btnAddPlan" data-page-node-id="5ZRaWqj0e4C2oKxO5ycBZA">编辑计划</button></div>
+      </div>
+      <div id="planBox" style="display:none;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:12px" data-page-node-id="IbG9XQEIOXoXHrb1kgXfdb">
+        <p class="section-note" style="margin-bottom:8px" data-page-node-id="xImHIOWsmrENxitdQatvtK">为周一到周日各选一个课表类型，留空表示休息日。</p>
+        <div id="planEditor" data-page-node-id="H7MudUYJub2idDbEsvN10x"></div>
+        <div style="display:flex;gap:8px;margin-top:10px" data-page-node-id="6mHzDWAHHMHdAn48KmYzKB"><button class="primary sm" id="btnSavePlan" data-page-node-id="oMnPHnekQw9KrPNfnsvelj">保存计划</button><button class="sm" id="btnCancelPlan" data-page-node-id="I1Txfg76nOBxUtXcy25jB1">取消</button></div>
+      </div>
+      <div id="planView" data-page-node-id="3xEXnqHCzVNjjEG3WNelNb"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast" data-page-node-id="W6gTlhB3vXH2777iCe0gWO"></div>
+
+<div class="mask" id="mask" data-page-node-id="hX5M63YyiEORsRwPyhptd9">
+  <div class="modal" data-page-node-id="pRCOSFaa3JrdFWUEUPMhfF">
+    <h3 id="mkTitle" data-page-node-id="kg7qgspNb6nsjbUFmxdPDp">确认操作</h3>
+    <p id="mkBody" data-page-node-id="iKKCMG5Gwk3yNMAz5GJSIo">确定吗？</p>
+    <div class="acts" data-page-node-id="TGo1qYDueOCimkvXK2I7fF">
+      <button id="mkNo" data-page-node-id="ws58SdrGSZ1ZjAW7eTS9t1">取消</button>
+      <button class="danger" id="mkYes" data-page-node-id="zq50MScJxyKoAYLQNfmMf0">确定</button>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* =========================================================
+   数据层：localStorage 读写
+   ========================================================= */
+var LS = "wb_cycling_coach_v1";
+
+var DEFAULT_STATE = {
+  settings: { apiKey: "", athleteId: "0", ftp: 0, weight: 0, name: "", lastPull: "" },
+  activities: [],
+  wellness: [],
+  ftpLog: [],
+  notes: [],      // 教练结论
+  injuries: [],
+  goals: [],
+  plans: {},      // { "YYYY-MM-DD": {type, detail} }
+  seeded: false
+};
+
+var state = null;
+
+function deepCopy(o){ return JSON.parse(JSON.stringify(o)); }
+
+function loadData(){
+  var raw = null;
+  try { raw = localStorage.getItem(LS); } catch(e){ raw = null; }
+  if (!raw){ state = deepCopy(DEFAULT_STATE); seedDemo(); saveData(); return; }
+  try {
+    var p = JSON.parse(raw);
+    state = Object.assign(deepCopy(DEFAULT_STATE), p);
+    // 补齐可能缺失的字段，保证向后兼容
+    ["activities","wellness","ftpLog","notes","injuries","goals"].forEach(function(k){
+      if (!Array.isArray(state[k])) state[k] = [];
+    });
+    if (!state.plans || typeof state.plans !== "object") state.plans = {};
+    if (!state.settings) state.settings = deepCopy(DEFAULT_STATE.settings);
+  } catch(e){
+    state = deepCopy(DEFAULT_STATE); seedDemo();
+  }
+}
+
+function saveData(){
+  try { localStorage.setItem(LS, JSON.stringify(state)); }
+  catch(e){ toast("本地存储写入失败，数据可能未保存"); }
+}
+
+/* ---------- 日期工具 ---------- */
+function fmtDate(d){
+  var y = d.getFullYear();
+  var m = String(d.getMonth()+1).padStart(2,"0");
+  var dd = String(d.getDate()).padStart(2,"0");
+  return y + "-" + m + "-" + dd;
+}
+function todayStr(){ return fmtDate(new Date()); }
+function addDays(s, n){
+  var d = new Date(s + "T00:00:00");
+  d.setDate(d.getDate() + n);
+  return fmtDate(d);
+}
+function diffDays(a, b){
+  return Math.round((new Date(b+"T00:00:00") - new Date(a+"T00:00:00")) / 86400000);
+}
+function weekStartOf(s){
+  var d = new Date(s + "T00:00:00");
+  var wd = (d.getDay() + 6) % 7; // 周一=0
+  d.setDate(d.getDate() - wd);
+  return fmtDate(d);
+}
+function mdLabel(s){
+  var p = s.split("-");
+  return p[1] + "/" + p[2];
+}
+function weekdayCN(s){
+  return ["周一","周二","周三","周四","周五","周六","周日"][(new Date(s+"T00:00:00").getDay()+6)%7];
+}
+function esc(s){
+  return String(s==null ? "" : s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+  });
+}
+function num(v, dp){
+  if (v === null || v === undefined || v === "" || isNaN(Number(v))) return "—";
+  var n = Number(v);
+  return dp === undefined ? String(Math.round(n*10)/10) : n.toFixed(dp);
+}
+
+/* ---------- 示例数据（含 1 条逾期） ---------- */
+function seedDemo(){
+  var t = todayStr();
+  var s = state.settings;
+
+  state.settings = { apiKey: "", athleteId: "0", ftp: 238, weight: 68.5, name: "", lastPull: "" };
+
+  // 近 12 天体能数据
+  var ctl = 52, atl = 48;
+  for (var i = 12; i >= 1; i--){
+    var d = addDays(t, -i);
+    var load = [0,68,92,0,45,110,0,75,0,88,54,0][12-i] || 0;
+    atl = atl + (load - atl) * 0.24;
+    ctl = ctl + (load - ctl) * 0.07;
+    state.wellness.push({
+      id: d, ctl: Math.round(ctl*10)/10, atl: Math.round(atl*10)/10,
+      tsb: Math.round((ctl-atl)*10)/10, rampRate: Math.round((ctl-52)/Math.max(1,(12-i+1))*10)/10,
+      weight: Math.round((68.5 + (Math.random()*0.6-0.3))*10)/10,
+      restingHR: 46 + Math.round(Math.random()*4),
+      hrv: 68 + Math.round(Math.random()*14),
+      sleepSecs: 25200 + Math.round(Math.random()*5400),
+      soreness: Math.round(Math.random()*3), fatigue: Math.round(Math.random()*3),
+      mood: 3 + Math.round(Math.random()*2)
+    });
+  }
+
+  // 近期训练
+  var demo = [
+    { off: 8, name: "长距离耐力骑行", type: "Ride", dur: 168, dist: 74.2, load: 132, np: 196, ap: 172, kj: 1730, ele: 680, hr: 141, hrmax: 172, dec: 4.1 },
+    { off: 6, name: "间歇 5×4min VO2max", type: "Ride", dur: 78, dist: 34.1, load: 96, np: 232, ap: 187, kj: 880, ele: 210, hr: 158, hrmax: 181, dec: 2.2 },
+    { off: 4, name: "节奏骑行 Tempo", type: "Ride", dur: 92, dist: 45.8, load: 88, np: 205, ap: 198, kj: 1090, ele: 340, hr: 149, hrmax: 168, dec: 3.0 },
+    { off: 2, name: "恢复骑 + 通勤", type: "Ride", dur: 54, dist: 22.4, load: 38, np: 148, ap: 132, kj: 480, ele: 120, hr: 124, hrmax: 145, dec: 1.4 }
+  ];
+  demo.forEach(function(a, idx){
+    state.activities.push({
+      id: "demo_" + idx, date: addDays(t, -a.off), name: a.name, type: a.type,
+      durationSec: a.dur*60, distance: a.dist*1000, load: a.load, np: a.np, avgPower: a.ap,
+      kilojoules: a.kj, elevation: a.ele, avgHr: a.hr, maxHr: a.hrmax, decoupling: a.dec,
+      source: "demo"
+    });
+  });
+
+  // 给示例的间歇课补一份分段数据，首次打开就能看到分段统计长什么样
+  var demoInterval = state.activities.filter(function(x){ return x.name.indexOf("间歇") >= 0; })[0];
+  if (demoInterval){
+    var iv = [];
+    var powers = [268, 265, 261, 256, 250];   // 逐段略微衰减，便于看到衰减趋势
+    var hrs = [163, 168, 172, 176, 179];
+    for (var k = 0; k < 5; k++){
+      iv.push({
+        label: "4m 0s", type: "WORK", sec: 240, dist: 2680,
+        ap: powers[k], np: powers[k] + 4, hr: hrs[k], hrMax: hrs[k] + 4,
+        cad: 92 - k, ele: 12, load: 11.5, wbalEnd: 8200 - k * 1400, vi: 1.03
+      });
+      iv.push({
+        label: "4m 0s", type: "RECOVERY", sec: 240, dist: 1780,
+        ap: 132, np: 138, hr: 148, hrMax: 156, cad: 88, ele: 8, load: 4.2, wbalEnd: 16400 - k * 1400, vi: 1.01
+      });
+    }
+    demoInterval.intervals = iv;
+    demoInterval.intervalGroups = [{ label: "4m 0s", count: 5, sec: 1200, ap: 260, np: 264, hr: 172, cad: 90, ele: 60, load: 57.5 }];
+    demoInterval.zoneTimes = [
+      { id: 1, secs: 540 }, { id: 2, secs: 900 }, { id: 3, secs: 780 },
+      { id: 4, secs: 420 }, { id: 5, secs: 960 }, { id: 6, secs: 1020 }, { id: 7, secs: 60 }
+    ];
+    demoInterval.polarization = 1.34;
+    demoInterval.intervalsFetched = true;
+  }
+
+  // FTP 演变
+  state.ftpLog = [
+    { id: "f1", date: addDays(t, -150), ftp: 212, weight: 71.0, source: "20分钟测试" },
+    { id: "f2", date: addDays(t, -90),  ftp: 224, weight: 69.8, source: "20分钟测试" },
+    { id: "f3", date: addDays(t, -32),  ftp: 238, weight: 68.5, source: "intervals.icu eFTP" }
+  ];
+
+  // 教练结论
+  state.notes = [
+    { id: "n1", date: addDays(t, -20), title: "恢复能力偏弱，强度课之间必须隔一天", body: "连续两天质量课后第二天 HRV 明显下降、主观疲劳 4/5。规则：VO2max 课次日强制恢复骑或休息。", tags: "规则" },
+    { id: "n2", date: addDays(t, -9), title: "长距离后期掉功率与补给有关", body: "上次 3 小时骑行后段 NP 掉 12%，同期未补给。结论：超过 90 分钟必须每小时 60g 碳水。", tags: "营养" },
+    { id: "n3", date: addDays(t, -3), title: "甜区爬坡是当前最有效的提升手段", body: "近三周 CTL 提升主要来自 8-15 分钟甜区爬坡间歇。建议每周保留 2 次。", tags: "训练" }
+  ];
+
+  state.injuries = [
+    { id: "i1", date: addDays(t, -45), part: "左膝外侧", desc: "座垫偏低导致，已上调 6mm 后消失。每周检查座高。" }
+  ];
+
+  state.goals = [
+    { id: "g1", title: "环太湖 120km 完赛", type: "赛事", date: addDays(t, 96), target: "均速 28km/h", status: "进行中" },
+    { id: "g2", title: "FTP 提升到 260W", type: "功率目标", date: addDays(t, 70), target: "260W / 3.8 W·kg⁻¹", status: "进行中" }
+  ];
+
+  // 本周计划（昨天的设为未完成 → 逾期）
+  var ws = weekStartOf(t);
+  state.plans = {};
+  state.plans[ws] = { type: "休息", detail: "" };
+  state.plans[addDays(ws,1)] = { type: "甜区间歇", detail: "3×12min @ 88-94% FTP" };
+  state.plans[addDays(ws,2)] = { type: "耐力骑", detail: "2h Z2" };
+  state.plans[addDays(ws,3)] = { type: "VO2max 间歇", detail: "5×4min @ 110% FTP" };
+  state.plans[addDays(ws,4)] = { type: "恢复骑", detail: "45min Z1" };
+  state.plans[addDays(ws,5)] = { type: "长距离", detail: "3h Z2 含爬坡" };
+  state.plans[addDays(ws,6)] = { type: "自由骑 / 团体骑", detail: "" };
+
+  // 统一给示例数据打标记，便于一键清除且不误删用户自己录入的内容
+  ["activities","wellness","ftpLog","notes","injuries","goals"].forEach(function(k){
+    state[k].forEach(function(x){ x.demo = true; });
+  });
+  Object.keys(state.plans).forEach(function(k){ if (state.plans[k]) state.plans[k].demo = true; });
+
+  state.seeded = true;
+}
+
+/* =========================================================
+   计算层：只读 state，不碰 DOM
+   ========================================================= */
+function getActivitiesSorted(){
+  return state.activities.slice().sort(function(a,b){
+    return a.date < b.date ? 1 : (a.date > b.date ? -1 : 0);
+  });
+}
+function getWellnessSorted(){
+  return state.wellness.slice().sort(function(a,b){
+    return a.id < b.id ? -1 : (a.id > b.id ? 1 : 0);
+  });
+}
+function getLatestWellness(){
+  var w = getWellnessSorted();
+  return w.length ? w[w.length-1] : null;
+}
+function activityOn(d){
+  var list = state.activities.filter(function(a){ return a.date === d; });
+  return list.length ? list[0] : null;
+}
+// 本次主课组 vs 历史上同一课型（同标签 + 相近时长）的平均功率对比
+function intervalProgress(a){
+  var gs = (a.intervalGroups || []).filter(function(g){ return g && g.ap > 0; });
+  if (!gs.length) return null;
+  var g = gs[0];
+  var prev = null;
+  state.activities.forEach(function(x){
+    if (x === a || x.date >= a.date || x.demo) return;   // 示例数据不参与历史对比
+    var pg = (x.intervalGroups || []).filter(function(q){
+      return q && q.ap > 0 && q.label === g.label && Math.abs((q.count ? q.sec/(q.count||1) : q.sec) - (g.count ? g.sec/(g.count||1) : g.sec)) < 45;
+    })[0];
+    if (pg && (!prev || x.date > prev.date)) prev = { date: x.date, ap: pg.ap };
+  });
+  if (!prev) return null;
+  return {
+    label: g.label || "主课组",
+    ap: g.ap, prevAp: prev.ap, prevDate: prev.date,
+    delta: +( ((g.ap - prev.ap) / prev.ap) * 100 ).toFixed(1),
+    days: diffDays(prev.date, a.date)
+  };
+}
+function weeklyLoads(n){
+  var weeks = [];
+  var thisWs = weekStartOf(todayStr());
+  for (var i = n-1; i >= 0; i--){
+    var ws = addDays(thisWs, -7*i);
+    var we = addDays(ws, 6);
+    var items = state.activities.filter(function(a){ return a.date >= ws && a.date <= we; });
+    var load = items.reduce(function(s,a){ return s + (Number(a.load)||0); }, 0);
+    var hours = items.reduce(function(s,a){ return s + (Number(a.durationSec)||0); }, 0) / 3600;
+    weeks.push({ start: ws, end: we, label: mdLabel(ws), load: Math.round(load), hours: Math.round(hours*10)/10, count: items.length });
+  }
+  return weeks;
+}
+function verdict(){
+  var w = getLatestWellness();
+  if (!w) return { level: "none", text: "暂无体能数据", cls: "" };
+  var tsb = Number(w.tsb);
+  if (isNaN(tsb)) return { level: "none", text: "暂无 TSB 数据", cls: "" };
+  if (tsb < -25) return { level: "bad", text: "深度疲劳（TSB " + num(tsb,1) + "）：连续高强度已超负荷，建议立即安排 2 天恢复，否则有过度训练风险。", cls: "red" };
+  if (tsb < -10) return { level: "tired", text: "疲劳累积（TSB " + num(tsb,1) + "）：正常超量恢复期，可维持计划但避免加量。", cls: "amber" };
+  if (tsb < 5)   return { level: "ok",   text: "中性（TSB " + num(tsb,1) + "）：状态平稳，适合执行质量课。", cls: "green" };
+  if (tsb < 20)  return { level: "fresh",text: "状态上扬（TSB " + num(tsb,1) + "）：适合测试或比赛，可安排强度。", cls: "green" };
+  return { level: "flat", text: "状态下滑（TSB " + num(tsb,1) + "）：太久没练，体能正在流失，需要恢复训练量。", cls: "amber" };
+}
+function ctlTrend(days){
+  var w = getWellnessSorted();
+  if (w.length < 2) return null;
+  var last = w[w.length-1];
+  var cut = addDays(last.id, -days);
+  var past = w.filter(function(x){ return x.id <= cut; });
+  if (!past.length) return null;
+  var p = past[past.length-1];
+  return { from: Number(p.ctl), to: Number(last.ctl), delta: Math.round((Number(last.ctl)-Number(p.ctl))*10)/10, days: days };
+}
+function overduePlans(){
+  var t = todayStr();
+  var out = [];
+  Object.keys(state.plans).forEach(function(d){
+    if (d >= t) return;
+    var p = state.plans[d];
+    if (!p || !p.type || p.type === "休息") return;
+    var done = activityOn(d);
+    var skipped = p.skipped === true;
+    if (!done && !skipped) out.push({ date: d, plan: p });
+  });
+  return out.sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+}
+function todayPlan(){
+  var p = state.plans[todayStr()];
+  return (p && p.type) ? p : null;
+}
+function hasDemo(){
+  return ["activities","wellness","ftpLog","notes","injuries","goals"].some(function(k){
+    return state[k].some(function(x){ return x.demo === true; });
+  });
+}
+
+/* ---------- 简报生成（核心） ---------- */
+// 页面统一展示的那次训练：今天有就今天，否则最近一次
+function currentRide(){
+  var recent = getActivitiesSorted();
+  return activityOn(todayStr()) || (recent.length ? recent[0] : null);
+}
+
+// 分段归属的那次训练：本次没有分段时，回退到最近一次有分段的训练
+// 页面分段区与「复制本次骑行」都用它，保证看到的和复制出去的是同一次
+function rideWithIntervals(){
+  var a = currentRide();
+  if (!a) return null;
+  if ((a.intervals || []).length || (a.intervalGroups || []).length) return a;
+  var withIv = getActivitiesSorted().filter(function(x){ return (x.intervals || []).length; })[0];
+  return withIv || a;
+}
+
+// 「本次骑行」整段（含分段统计）——完整简报与「复制本次骑行」共用，保证两处口径一致
+function briefRideSection(a, ftp, heading){
+  var L = [];
+  L.push(heading || "# 本次骑行" + (a ? "（" + a.date + "）" : ""));
+  if (!a){
+    L.push("- 暂无训练记录，请先补录或连接 intervals.icu 拉取。");
+    return L;
+  }
+  var hrs = Math.floor((Number(a.durationSec)||0) / 3600);
+  var mins = Math.round(((Number(a.durationSec)||0) % 3600) / 60);
+  L.push("- 名称：" + (a.name || "未命名"));
+  L.push("- 时长：" + (hrs > 0 ? hrs + " 小时 " : "") + mins + " 分钟");
+  L.push("- 距离：" + num((Number(a.distance)||0)/1000, 1) + " km");
+  L.push("- 训练负荷 TSS：" + num(a.load, 0) + (a.intensity ? "｜相对 FTP 强度 " + num(a.intensity,0) + "%" : ""));
+  L.push("- 标准化功率 NP：" + num(a.np, 0) + " W");
+  L.push("- 平均功率：" + num(a.avgPower, 0) + " W");
+  if (ftp > 0 && a.np) L.push("- 强度因子 IF：" + (Number(a.np)/ftp).toFixed(2));
+  if (a.vi) L.push("- 变异性指数 VI：" + a.vi.toFixed(2) + "（区间课应接近 1.0，>1.1 说明功率波动大）");
+  if (a.ef) L.push("- 效率因子 EF（NP/平均心率）：" + a.ef.toFixed(2) + "（与历史同课时对比判断有氧效率变化）");
+  if (a.powerHr) L.push("- 功率/心率比：" + a.powerHr.toFixed(2));
+  if (a.cadence) L.push("- 平均踏频：" + num(a.cadence,0) + " rpm");
+  if (a.avgSpeed) L.push("- 平均速度：" + (a.avgSpeed*3.6).toFixed(1) + " km/h");
+  if (a.trimp) L.push("- TRIMP（心率负荷）：" + num(a.trimp,0));
+  if (a.hrr) L.push("- 心率恢复 HRR：" + num(a.hrr,0) + " bpm");
+  L.push("- 做功：" + num(a.kilojoules, 0) + " kJ" + (a.calories ? "｜热量 " + num(a.calories,0) + " kcal" : ""));
+  if (a.carbsUsed || a.carbsIngested) L.push("- 碳水：消耗 " + num(a.carbsUsed,0) + " g｜摄入 " + num(a.carbsIngested,0) + " g");
+  L.push("- 爬升：" + num(a.elevation, 0) + " m");
+  if (a.coastingSec) L.push("- 滑行：" + Math.floor(a.coastingSec/60) + "m" + Math.round(a.coastingSec%60) + "s（占 " + ((a.coastingSec/(a.durationSec||1))*100).toFixed(1) + "%）");
+  L.push("- 平均心率：" + num(a.avgHr, 0) + " bpm｜最大心率：" + num(a.maxHr, 0) + " bpm");
+  if (a.decoupling) L.push("- 功率/心率解耦：" + num(a.decoupling, 1) + " %（>5% 提示有氧耐力不足或补给/散热问题）");
+  if (a.rpe) L.push("- RPE（主观强度）：" + num(a.rpe,0) + (a.feel ? "｜感受 " + num(a.feel,0) + "/10" : ""));
+  if (a.ctl || a.atl) L.push("- 当日体能状态：CTL " + num(a.ctl,1) + "｜ATL " + num(a.atl,1) + "｜TSB " + num(a.tsb,1));
+  if (a.eFtp || a.rollingFtp) L.push("- 本课估算 FTP：eFTP " + num(a.eFtp,0) + " W｜滚动 eFTP " + num(a.rollingFtp,0) + " W");
+  if (a.strain) L.push("- 体力（strain）：" + num(a.strain,1));
+  if (a.notes) L.push("- 主观备注：" + a.notes);
+
+  // 分段统计（间歇课的核心依据）
+  var gs = a.intervalGroups || [];
+  var laps = (a.intervals || []).filter(function(v){ return v.type === "WORK"; });
+  if (!laps.length && (a.intervals || []).length) laps = a.intervals;
+  if (gs.length || laps.length){
+    L.push("");
+    L.push("【分段统计】");
+    if (gs.length){
+      L.push("| 组 | 次数 | 单段时长 | 平均功率 | NP | 心率 | 踏频 | 负荷 |");
+      L.push("|---|---|---|---|---|---|---|---|");
+      gs.forEach(function(g){
+        L.push("| " + (g.label || "分组") + " | " + num(g.count,0) + " | " + (g.count ? fmtSec(g.sec/(g.count||1)) : fmtSec(g.sec)) +
+          " | " + num(g.ap,0) + " W | " + num(g.np,0) + " W | " + num(g.hr,0) + " | " + num(g.cad,0) + " | " + num(g.load,0) + " |");
+      });
+    }
+    if (laps.length){
+      L.push("");
+      L.push("逐段明细（WORK 段，共 " + laps.length + " 段）：");
+      L.push("| 段 | 时长 | 平均功率 | NP | 心率 | 踏频 | 末段 W'bal |");
+      L.push("|---|---|---|---|---|---|---|");
+      laps.slice(0, 15).forEach(function(v, i){
+        L.push("| " + (i + 1) + " | " + fmtSec(v.sec) + " | " + num(v.ap,0) + " W | " + num(v.np,0) + " W | " +
+          num(v.hr,0) + " | " + num(v.cad,0) + " | " + (v.wbalEnd ? num(v.wbalEnd,0) + " J" : "—") + " |");
+      });
+      if (laps.length > 15) L.push("（仅列出前 15 段，共 " + laps.length + " 段）");
+      L.push("请重点判断：① 逐段功率是否衰减（第 1 段 vs 最后一段）；② 心率是否逐段上漂（有氧能力是否顶住）；③ 各段功率是否落在目标区间。");
+    }
+    var zt = (a.zoneTimes || []).filter(function(z){ return z && z.secs > 0; });
+    if (zt.length){
+      var tot = zt.reduce(function(s2, z){ return s2 + z.secs; }, 0);
+      L.push("");
+      L.push("功率区间时间分布：" + zt.map(function(z){
+        return "Z" + z.id + " " + Math.round(z.secs/60) + "分(" + (tot ? Math.round(z.secs/tot*100) : 0) + "%)";
+      }).join("｜") + (a.polarization ? "｜极化指数 PI " + num(a.polarization,2) : ""));
+    }
+    var pg = intervalProgress(a);
+    if (pg) L.push("历史同课对比：本次「" + pg.label + "」平均功率 " + num(pg.ap,0) + " W，上次（" + pg.prevDate + "）" + num(pg.prevAp,0) +
+      " W，" + (pg.delta >= 0 ? "+" : "") + pg.delta + "%（" + pg.days + " 天前）。");
+  } else if (a.source === "icu"){
+    L.push("");
+    L.push("【分段统计】这次训练没有自动分段数据（可能是连续骑行，或尚未补拉分段）。");
+  }
+  return L;
+}
+
+// 只复制「本次骑行 + 分段统计」，适合每天骑完快速交给 AI
+function buildRideOnly(){
+  var base = currentRide();
+  var a = rideWithIntervals();
+  var ftp = Number(state.settings.ftp) || 0;
+  var L = [];
+  if (a && base && String(a.id) !== String(base.id)){
+    L.push("说明：最近一次训练（" + base.date + "）没有自动分段数据，以下是 " + a.date + " 的分段。");
+    L.push("");
+  }
+  L = L.concat(briefRideSection(a, ftp, "# 本次骑行（" + (a ? a.date : todayStr()) + "）"));
+  L.push("");
+  L.push("请基于以上数据分析这次训练：① 各分段功率是否稳定、有无衰减；② 心率是否逐段上漂；③ 是否达成本课目标；④ 下一次课怎么安排。严格使用以上数据，不要臆造任何数字。");
+  return L.join("\n");
+}
+
+function copyText(text){
+  if (!text){ toast("没有可复制的内容"); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ toast("已复制，去粘贴给 AI 教练吧"); })
+      .catch(function(){ fallbackCopy(text); });
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.position = "fixed";
+  ta.style.top = "0";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  var ok = false;
+  try { ok = document.execCommand("copy"); } catch(e){ ok = false; }
+  document.body.removeChild(ta);
+  if (ok){ toast("已复制"); return; }
+  // 剪贴板不可用时（如以本地文件方式打开），展开文本框供手动复制
+  var box = document.getElementById("rideOut");
+  if (box){
+    box.value = text;
+    box.style.display = "block";
+    box.focus();
+    box.select();
+    toast("自动复制失败，已展开文本框，按 Ctrl/Cmd + C 复制");
+  } else {
+    toast("复制失败，请手动复制");
+  }
+}
+
+function buildBrief(){
+  var t = todayStr();
+  var s = state.settings;
+  var w = getLatestWellness();
+  var weeks = weeklyLoads(4);
+  var recent = getActivitiesSorted().slice(0, 8);
+  var v = verdict();
+  var tr = ctlTrend(28);
+  var latest = currentRide();
+  var wk = Number(s.weight) > 0 ? s.weight : (w && w.weight ? w.weight : 0);
+  var ftp = Number(s.ftp) || 0;
+  var wkg = (ftp > 0 && wk > 0) ? (ftp / wk).toFixed(2) : "—";
+
+  var L = [];
+  L.push("# 角色");
+  L.push("你是一位资深公路车教练，具备运动生理学背景，正在长期指导我训练。请严格基于下方【真实结构化数据】分析，不要臆造任何数字，也不要复述我给你的数据。");
+  L.push("");
+  L.push("# 一、运动员档案（长期有效，如与下方数据冲突以下方为准）");
+  L.push("- 当前日期：" + t);
+  L.push("- 体重：" + (wk ? wk + " kg" : "未填写"));
+  L.push("- 当前 FTP：" + (ftp ? ftp + " W" : "未填写"));
+  L.push("- 功率体重比：" + (wkg !== "—" ? wkg + " W/kg" : "—"));
+  L.push("- 身份：业余公路车爱好者，可稳定日常训练");
+  var activeGoals = state.goals.filter(function(g){ return g.status !== "已完成"; });
+  if (activeGoals.length){
+    L.push("- 当前目标：");
+    activeGoals.forEach(function(g){
+      var dd = g.date ? diffDays(t, g.date) : null;
+      L.push("  · " + g.title + (g.target ? "（" + g.target + "）" : "") +
+        (g.date ? "｜目标日 " + g.date + "｜距今 " + dd + " 天" : ""));
+    });
+  }
+
+  L.push("");
+  L = L.concat(briefRideSection(latest, ftp, "# 二、本次骑行（" + (latest ? latest.date : t) + "）"));
+
+  L.push("");
+  L.push("# 三、近 4 周负荷对比");
+  L.push("| 周起始 | 周 TSS | 次数 | 时长(h) |");
+  L.push("|---|---|---|---|");
+  weeks.forEach(function(x){ L.push("| " + x.start + " | " + x.load + " | " + x.count + " | " + x.hours + " |"); });
+
+  L.push("");
+  L.push("# 四、当前体能状态快照");
+  if (w){
+    L.push("- CTL（体能）：" + num(w.ctl, 1));
+    L.push("- ATL（疲劳）：" + num(w.atl, 1));
+    L.push("- TSB（状态）：" + num(w.tsb, 1));
+    if (tr) L.push("- CTL 近 " + tr.days + " 天变化：" + (tr.delta >= 0 ? "+" : "") + tr.delta + "（" + num(tr.from,1) + " → " + num(tr.to,1) + "）");
+    if (w.restingHR) L.push("- 静息心率：" + num(w.restingHR, 0) + " bpm");
+    if (w.hrv) L.push("- HRV：" + num(w.hrv, 0));
+    if (w.sleepSecs) L.push("- 睡眠：" + (Number(w.sleepSecs)/3600).toFixed(1) + " 小时");
+    if (w.soreness !== undefined) L.push("- 肌肉酸痛：" + num(w.soreness,0) + "/5｜主观疲劳：" + num(w.fatigue,0) + "/5");
+  } else {
+    L.push("- 暂无体能数据");
+  }
+  L.push("- 系统判定：" + v.text);
+
+  L.push("");
+  L.push("# 五、历史教练结论（请遵守这些已验证的规律，并在此基础上迭代，不要推翻重来）");
+  if (state.notes.length){
+    state.notes.slice().sort(function(a,b){ return a.date < b.date ? 1 : -1; }).slice(0, 12).forEach(function(n){
+      L.push("- " + n.date + "：" + n.title + (n.body ? " —— " + n.body : ""));
+    });
+  } else {
+    L.push("- 暂无，请从本次分析开始积累。");
+  }
+
+  if (state.injuries.length){
+    L.push("");
+    L.push("# 六、身体状态与伤病史（制定计划时必须规避）");
+    state.injuries.slice(0, 6).forEach(function(i){
+      L.push("- " + i.date + "：" + i.part + (i.desc ? " —— " + i.desc : ""));
+    });
+  }
+
+  L.push("");
+  L.push("# 七、我的问题");
+  L.push("请基于以上全部信息，回答：**这次训练说明什么？我的长期计划该怎么调整？**");
+  L.push("");
+  L.push("# 八、输出要求（严格按此结构，用中文）");
+  L.push("1. **本次训练解读**：3-5 句，指出最关键的信号（不要复述数据）。");
+  L.push("2. **与历史对比的判断**：进步 / 停滞 / 过度疲劳，三选一，并给出数据依据。");
+  L.push("3. **未来 7 天计划调整**：按天列表，格式为 `日期 | 课表类型 | 时长 | 目标区间/强度`，并说明为什么这样排。");
+  L.push("4. **风险提示**：只写真正需要警惕的 1-2 条。");
+  L.push("5. **存档结论**：用不超过 3 条、每条不超过 30 字的短句，概括**本次之后必须长期记住**的结论。");
+  L.push("   格式严格要求为：");
+  L.push("   - " + t + "：第一条结论");
+  L.push("   - " + t + "：第二条结论");
+  L.push("   （这几行我会直接存入训练档案，并在下次提问时原样附给你，请确保它们经得起时间检验。）");
+
+  return L.join("\n");
+}
+
+/* =========================================================
+   渲染层：只读 state + 计算层，互不调用
+   ========================================================= */
+// 一键拉取今日：只请求今天一天，并自动补拉今日这次训练的分段
+async function pullTodayData(){
+  var key = (state.settings.apiKey || "").trim();
+  if (!key) return { needSetup: true };
+  var t = todayStr();
+  var r = await pullFromICU(t, t);              // 返回 {acts 新增, well 新增, totalA, totalW}
+  var laps = 0;
+  try {
+    // 今日这次活动若还没有分段，单独补拉（只针对今天，最多 1 次请求）
+    var today = state.activities.filter(function(a){
+      return a.date === t && a.source === "icu" && a.id && !(a.intervals && a.intervals.length) && !a.intervalsFetched;
+    });
+    for (var i = 0; i < today.length; i++){
+      var a = today[i];
+      var dto = await icuGetRaw("/activity/" + encodeURIComponent(a.id) + "/intervals");
+      var iv = Array.isArray(dto && dto.icu_intervals) ? dto.icu_intervals : [];
+      var gp = Array.isArray(dto && dto.icu_groups) ? dto.icu_groups : [];
+      a.intervalsFetched = true;
+      if (iv.length || gp.length){
+        a.intervals = iv.map(mapInterval);
+        a.intervalGroups = gp.map(mapIntervalGroup);
+        laps++;
+      }
+    }
+  } catch(e){ /* 分段失败不影响今日数据 */ }
+  saveData();
+  return { needSetup: false, adds: r.acts, wells: r.well, total: r.totalA, laps: laps };
+}
+
+// 一键拉取今日的统一入口（顶部按钮 / 待办条目共用）
+function runPullToday(btn){
+  var txt = document.getElementById("btnPullTodayTxt");
+  function busy(on){
+    if (btn){
+      btn.disabled = on;
+      if (btn.id === "btnPullToday" && txt) txt.textContent = on ? "拉取中…" : "拉取今日数据";
+      else if (btn) btn.textContent = on ? "拉取中…" : (btn.getAttribute("data-label") || "拉取今日");
+    }
+  }
+  if (btn && btn.id !== "btnPullToday" && !btn.getAttribute("data-label"))
+    btn.setAttribute("data-label", btn.textContent);
+  busy(true);
+  return pullTodayData().then(function(r){
+    if (r.needSetup){ gotoApiSetup(); return; }
+    refreshAll();
+    if (!r.total){
+      toast("今天在 intervals.icu 上还没有新数据（骑行上传后稍等再试）");
+    } else {
+      toast("今日已同步：" + r.total + " 条训练" +
+            (r.wells ? "、" + r.wells + " 天体能" : "") +
+            (r.laps ? "、含分段" : "") +
+            (r.adds ? "" : "（已存在，已更新为最新）"));
+    }
+  }).catch(function(err){
+    toast("拉取失败：" + (err && err.message ? err.message : "未知错误"));
+  }).then(function(){ busy(false); });
+}
+
+// 未配置 API Key 时：切到「今日训练」并展开连接设置
+function gotoApiSetup(){
+  if (typeof switchTab === "function") switchTab("ride");
+  var box = document.getElementById("apiBox");
+  if (box){ box.style.display = "block"; var k = document.getElementById("apiKey"); if (k) k.focus(); }
+  toast("请先连接 intervals.icu：填 API Key 后点「测试连接」");
+}
+
+function renderToday(){
+  var box = document.getElementById("todayList");
+  var t = todayStr();
+  document.getElementById("todayDate").textContent = t + " " + weekdayCN(t);
+  var items = [];
+
+  // 1) 逾期未完成的计划
+  var od = overduePlans();
+  od.forEach(function(o){
+    items.push({
+      cls: "over",
+      title: "未完成：" + o.date + " " + weekdayCN(o.date) + " 的「" + esc(o.plan.type) + "」",
+      desc: (o.plan.detail ? esc(o.plan.detail) + " · " : "") + "已逾期 " + diffDays(o.date, t) + " 天",
+      acts: '<button class="tiny" data-act="fillPlan" data-date="' + o.date + '">补录训练</button>' +
+            '<button class="tiny" data-act="skipPlan" data-date="' + o.date + '">标记跳过</button>'
+    });
+  });
+
+  // 2) 今天还没录入训练
+  var tp = todayPlan();
+  var todayAct = activityOn(t);
+  if (!todayAct){
+    items.push({
+      cls: tp ? "warn" : "",
+      title: tp ? "今日计划：「" + esc(tp.type) + "」尚未录入" : "今天还没有训练记录",
+      desc: tp ? (tp.detail ? esc(tp.detail) : "按计划完成后回来录入或拉取数据") : "完成骑行后拉取数据或手动补录",
+      acts: '<button class="tiny primary" data-act="pullToday">拉取今日</button>' +
+            '<button class="tiny" data-act="goRide">去录入</button>'
+    });
+  } else {
+    items.push({
+      cls: "",
+      title: "今日已记录：" + esc(todayAct.name || "未命名骑行"),
+      desc: "TSS " + num(todayAct.load,0) + " · " + num((Number(todayAct.distance)||0)/1000,1) + " km · NP " + num(todayAct.np,0) + " W",
+      acts: '<button class="tiny" data-act="genBrief">生成简报</button>' +
+            '<button class="tiny" data-act="pullToday">重新同步</button>'
+    });
+  }
+
+  // 3) 状态提醒
+  var v = verdict();
+  if (v.level === "bad" || v.level === "tired" || v.level === "flat"){
+    items.push({
+      cls: v.level === "bad" ? "over" : "warn",
+      title: "体能状态提醒",
+      desc: v.text,
+      acts: '<button class="tiny" data-act="goTrend">查看趋势</button>'
+    });
+  }
+
+  // 4) 数据备份提醒
+  if (state.activities.length >= 30 && !state.backupDismissed){
+    items.push({
+      cls: "warn",
+      title: "数据已积累 " + state.activities.length + " 条，建议导出备份",
+      desc: "训练数据一旦丢失无法重建，建议每周导出一次。",
+      acts: '<button class="tiny" data-act="exportNow">立即导出</button><button class="tiny" data-act="dismissBackup">知道了</button>'
+    });
+  }
+
+  if (!items.length){
+    box.innerHTML = '<div class="empty">今天没有待处理事项，训练与计划都在正轨上。</div>';
+    return;
+  }
+  box.innerHTML = items.map(function(it){
+    return '<div class="todo ' + it.cls + '"><span class="dot"></span><div class="body">' +
+      '<div class="t">' + it.title + '</div><div class="d">' + it.desc + '</div></div>' +
+      '<div class="acts">' + it.acts + '</div></div>';
+  }).join("");
+}
+
+function renderRideView(){
+  var box = document.getElementById("rideView");
+  var a = currentRide();
+  if (!a){
+    box.innerHTML = '<div class="empty">还没有训练数据。<br>点击右上角「连接设置」绑定 intervals.icu 一键拉取，或用「手动补录」录入。</div>';
+    return;
+  }
+  var ftp = Number(state.settings.ftp) || 0;
+  var iF = (ftp > 0 && a.np) ? (Number(a.np)/ftp).toFixed(2) : "—";
+  var hrs = Math.floor((Number(a.durationSec)||0)/3600);
+  var mins = Math.round(((Number(a.durationSec)||0)%3600)/60);
+  var h = '<div class="stats">';
+  h += '<div class="stat hl"><div class="k">训练负荷</div><div class="v">' + num(a.load,0) + '<span class="u">TSS</span></div></div>';
+  h += '<div class="stat"><div class="k">时长</div><div class="v">' + (hrs>0?hrs+"h":"") + mins + '<span class="u">min</span></div></div>';
+  h += '<div class="stat"><div class="k">距离</div><div class="v">' + num((Number(a.distance)||0)/1000,1) + '<span class="u">km</span></div></div>';
+  h += '<div class="stat"><div class="k">标准化功率</div><div class="v">' + num(a.np,0) + '<span class="u">W</span></div></div>';
+  h += '<div class="stat"><div class="k">强度因子</div><div class="v">' + iF + '</div></div>';
+  h += '<div class="stat"><div class="k">做功</div><div class="v">' + num(a.kilojoules,0) + '<span class="u">kJ</span></div></div>';
+  h += '<div class="stat"><div class="k">爬升</div><div class="v">' + num(a.elevation,0) + '<span class="u">m</span></div></div>';
+  h += '<div class="stat"><div class="k">平均心率</div><div class="v">' + num(a.avgHr,0) + '<span class="u">bpm</span></div></div>';
+  h += '</div>';
+  // 完整维度（与 intervals.icu 卡片对齐，有值才显示）
+  var m = [];
+  function pushMini(k, v, u){ if (v !== "—" && v !== "" && v !== undefined && v !== null) m.push('<div class="stat mini"><div class="k">' + k + '</div><div class="v">' + v + (u ? '<span class="u">' + u + '</span>' : '') + '</div></div>'); }
+  pushMini("强度", a.intensity ? a.intensity + "%" : "—");
+  pushMini("平均功率", a.avgPower ? num(a.avgPower,0) : "—", "W");
+  pushMini("变异性 VI", a.vi ? a.vi.toFixed(2) : "—");
+  pushMini("效率 EF", a.ef ? a.ef.toFixed(2) : "—");
+  pushMini("功率/心率", a.powerHr ? a.powerHr.toFixed(2) : "—");
+  pushMini("解耦", a.decoupling ? num(a.decoupling,1) : "—", "%");
+  pushMini("踏频", a.cadence ? num(a.cadence,0) : "—", "rpm");
+  pushMini("平均速度", a.avgSpeed ? (a.avgSpeed*3.6).toFixed(1) : "—", "km/h");
+  pushMini("最大心率", a.maxHr ? num(a.maxHr,0) : "—", "bpm");
+  pushMini("TRIMP", a.trimp ? num(a.trimp,0) : "—");
+  pushMini("心率恢复 HRR", a.hrr ? num(a.hrr,0) : "—");
+  var coastMin = Math.floor((Number(a.coastingSec)||0)/60), coastSec = Math.round((Number(a.coastingSec)||0)%60);
+  if (coastMin + coastSec > 0){
+    var coastPct = a.durationSec ? ((Number(a.coastingSec)/a.durationSec)*100).toFixed(1) : "";
+    pushMini("滑行", coastMin + "m" + coastSec + "s" + (coastPct ? " " + coastPct + "%" : ""));
+  }
+  pushMini("热量", a.calories ? num(a.calories,0) : "—", "kcal");
+  pushMini("碳水消耗", a.carbsUsed ? num(a.carbsUsed,0) : "—", "g");
+  pushMini("碳水摄入", a.carbsIngested ? num(a.carbsIngested,0) : "—", "g");
+  pushMini("RPE", a.rpe ? num(a.rpe,0) : "—");
+  pushMini("体力", a.strain ? num(a.strain,1) : "—");
+  pushMini("eFTP", a.eFtp ? num(a.eFtp,0) : "—", "W");
+  pushMini("W'", a.wprime ? num(a.wprime,0) : "—", "J");
+  pushMini("Pmax", a.pmax ? num(a.pmax,0) : "—", "W");
+  if (a.ctl || a.atl) pushMini("当日体能/疲劳/状态", (a.ctl?num(a.ctl,0):"—") + " / " + (a.atl?num(a.atl,0):"—") + " / " + (a.tsb?num(a.tsb,0):"—"));
+  if (m.length) h += '<div class="stats" style="margin-bottom:10px">' + m.join("") + '</div>';
+  var subj = [];
+  if (a.feel) subj.push("感受 " + num(a.feel,0) + "/10");
+  if (a.sessionRpe) subj.push("S-RPE " + num(a.sessionRpe,0));
+  if (a.subType) subj.push("课型 " + esc(a.subType));
+  h += '<div class="hint">' + esc(a.date) + ' · <b>' + esc(a.name || "未命名") + '</b>' +
+       (subj.length ? ' · ' + subj.join(' · ') : '') +
+       (a.decoupling ? ' · 解耦 ' + num(a.decoupling,1) + '%' : '') +
+       (a.source === "icu" ? ' <span class="tag green">来自 intervals.icu</span>' : (a.source === "demo" ? ' <span class="tag">示例数据</span>' : '')) +
+       '</div>';
+  box.innerHTML = h;
+}
+
+/* ---------- SVG 图表 ---------- */
+function buildLineChart(data){
+  var W = 760, H = 280, P = { l: 44, r: 14, t: 14, b: 34 };
+  var iw = W - P.l - P.r, ih = H - P.t - P.b;
+  var keys = [
+    { k: "ctl", c: "#0d9488" },
+    { k: "atl", c: "#ea580c" },
+    { k: "tsb", c: "#7c3aed" }
+  ];
+  var min = Infinity, max = -Infinity;
+  data.forEach(function(d){
+    keys.forEach(function(s){
+      var v = Number(d[s.k]);
+      if (!isNaN(v) && d[s.k] !== undefined && d[s.k] !== null){
+        if (v < min) min = v;
+        if (v > max) max = v;
+      }
+    });
+  });
+  if (min === Infinity){ min = 0; max = 100; }
+  if (min === max){ min -= 5; max += 5; }
+  var pad = (max - min) * 0.12;
+  min -= pad; max += pad;
+
+  var X = function(i){ return data.length === 1 ? P.l + iw/2 : P.l + i * iw / (data.length - 1); };
+  var Y = function(v){ return P.t + ih - (v - min) / (max - min) * ih; };
+
+  var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="体能趋势图">';
+  // 网格 + Y 轴
+  for (var g = 0; g <= 4; g++){
+    var yv = min + (max - min) * g / 4;
+    var y = Y(yv);
+    s += '<line x1="' + P.l + '" y1="' + y.toFixed(1) + '" x2="' + (W-P.r) + '" y2="' + y.toFixed(1) + '" stroke="#e2e8f0" stroke-width="1"/>';
+    s += '<text x="' + (P.l-8) + '" y="' + (y+4).toFixed(1) + '" text-anchor="end" font-size="11" fill="#94a3b8">' + Math.round(yv) + '</text>';
+  }
+  // 零线
+  if (min < 0 && max > 0){
+    var y0 = Y(0);
+    s += '<line x1="' + P.l + '" y1="' + y0.toFixed(1) + '" x2="' + (W-P.r) + '" y2="' + y0.toFixed(1) + '" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>';
+  }
+  // 折线
+  keys.forEach(function(se){
+    var pts = [];
+    data.forEach(function(d, i){
+      var v = Number(d[se.k]);
+      if (isNaN(v) || d[se.k] === undefined || d[se.k] === null) return;
+      pts.push(X(i).toFixed(1) + "," + Y(v).toFixed(1));
+    });
+    if (pts.length < 2) return;
+    s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="' + se.c + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>';
+  });
+  // X 轴标签
+  var idxs = [0, Math.floor((data.length-1)/2), data.length-1];
+  idxs.forEach(function(i){
+    if (i < 0 || i >= data.length) return;
+    s += '<text x="' + X(i).toFixed(1) + '" y="' + (H-12) + '" text-anchor="middle" font-size="11" fill="#94a3b8">' + mdLabel(data[i].id) + '</text>';
+  });
+  s += '</svg>';
+  return s;
+}
+
+function buildBarChart(weeks){
+  var W = 760, H = 220, P = { l: 44, r: 14, t: 14, b: 34 };
+  var iw = W - P.l - P.r, ih = H - P.t - P.b;
+  var max = 1;
+  weeks.forEach(function(w){ if (w.load > max) max = w.load; });
+  max = Math.ceil(max / 50) * 50;
+  if (max <= 0) max = 50;
+  var bw = iw / weeks.length;
+  var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="周负荷柱状图">';
+  for (var g = 0; g <= 4; g++){
+    var yv = max * g / 4;
+    var y = P.t + ih - (yv / max) * ih;
+    s += '<line x1="' + P.l + '" y1="' + y.toFixed(1) + '" x2="' + (W-P.r) + '" y2="' + y.toFixed(1) + '" stroke="#e2e8f0" stroke-width="1"/>';
+    s += '<text x="' + (P.l-8) + '" y="' + (y+4).toFixed(1) + '" text-anchor="end" font-size="11" fill="#94a3b8">' + Math.round(yv) + '</text>';
+  }
+  weeks.forEach(function(w, i){
+    var bh = (w.load / max) * ih;
+    var x = P.l + i * bw + bw * 0.22;
+    var bwid = bw * 0.56;
+    var y = P.t + ih - bh;
+    var isNow = (i === weeks.length - 1);
+    s += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + bwid.toFixed(1) + '" height="' + Math.max(1,bh).toFixed(1) +
+         '" rx="4" fill="' + (isNow ? "#0d9488" : "#5eead4") + '"/>';
+    s += '<text x="' + (x + bwid/2).toFixed(1) + '" y="' + (y - 5).toFixed(1) + '" text-anchor="middle" font-size="11" fill="#475569" font-weight="600">' + w.load + '</text>';
+    s += '<text x="' + (x + bwid/2).toFixed(1) + '" y="' + (H-12) + '" text-anchor="middle" font-size="11" fill="#94a3b8">' + w.label + '</text>';
+  });
+  s += '</svg>';
+  return s;
+}
+
+function renderTrends(){
+  var w = getWellnessSorted();
+  var box = document.getElementById("trendChart");
+  var last30 = w.slice(-30);
+  if (last30.length < 2){
+    box.innerHTML = '<div class="empty">体能数据不足。<br>连接 intervals.icu 拉取历史数据后，这里会自动生成 CTL/ATL/TSB 曲线。</div>';
+    document.getElementById("trendRange").textContent = "";
+  } else {
+    box.innerHTML = buildLineChart(last30);
+    document.getElementById("trendRange").textContent = last30[0].id + " → " + last30[last30.length-1].id;
+  }
+
+  var v = verdict();
+  var tr = ctlTrend(28);
+  var sv = document.getElementById("statusVerdict");
+  var tagCls = v.cls === "red" ? "red" : (v.cls === "amber" ? "amber" : "green");
+  var h = '<div class="banner ' + (v.level === "bad" ? "" : (v.level === "tired" || v.level === "flat" ? "" : "ok")) + '">';
+  h += '<svg class="ic" style="margin-top:2px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>';
+  h += '<div><b>状态判定<span class="tag ' + tagCls + '">' + v.level + '</span></b><br>' + esc(v.text);
+  if (tr) h += '<br><span style="font-size:12.5px">CTL 近 28 天：' + (tr.delta >= 0 ? "+" : "") + tr.delta + "（" + num(tr.from,1) + " → " + num(tr.to,1) + "）</span>";
+  h += '</div></div>';
+  sv.innerHTML = h;
+
+  var weeks = weeklyLoads(8);
+  document.getElementById("loadChart").innerHTML = buildBarChart(weeks);
+  var thisW = weeks[weeks.length-1];
+  var prevW = weeks[weeks.length-2];
+  var delta = prevW && prevW.load > 0 ? Math.round((thisW.load - prevW.load) / prevW.load * 100) : null;
+  var ls = document.getElementById("loadSummary");
+  ls.innerHTML = '<div class="stats">' +
+    '<div class="stat hl"><div class="k">本周 TSS</div><div class="v">' + thisW.load + '</div></div>' +
+    '<div class="stat"><div class="k">上周 TSS</div><div class="v">' + (prevW ? prevW.load : "—") + '</div></div>' +
+    '<div class="stat"><div class="k">环比</div><div class="v">' + (delta === null ? "—" : (delta >= 0 ? "+" : "") + delta + "%") + '</div></div>' +
+    '<div class="stat"><div class="k">本周次数</div><div class="v">' + thisW.count + '</div></div>' +
+    '</div>' +
+    (delta !== null && delta > 20 ? '<div class="banner"><svg class="ic" style="margin-top:2px" viewBox="0 0 24 24"><path d="M12 9v5M12 17.5h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 001.7 3h15.8a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg><div>本周负荷比上周增加 ' + delta + '%，超过 20% 的安全增幅，下注意受伤与过度疲劳风险。</div></div>' : '');
+
+  var acts = getActivitiesSorted().slice(0, 12);
+  document.getElementById("actCount").textContent = state.activities.length + " 条";
+  var al = document.getElementById("activityList");
+  if (!acts.length){
+    al.innerHTML = '<div class="empty">暂无训练记录</div>';
+  } else {
+    al.innerHTML = acts.map(function(a){
+      return '<div class="row"><div class="main">' +
+        '<div class="tt">' + esc(a.date) + ' · ' + esc(a.name || "未命名骑行") + '</div>' +
+        '<div class="dd">TSS ' + num(a.load,0) + ' · ' + num((Number(a.distance)||0)/1000,1) + ' km · ' +
+        Math.round((Number(a.durationSec)||0)/60) + ' min · NP ' + num(a.np,0) + ' W' +
+        (a.vi ? ' · VI ' + a.vi.toFixed(2) : '') + (a.ef ? ' · EF ' + a.ef.toFixed(2) : '') + '</div></div>' +
+        '<div class="acts"><button class="tiny" data-act="delAct" data-id="' + esc(a.id) + '">删除</button></div></div>';
+    }).join("");
+  }
+}
+
+function renderArchive(){
+  // FTP
+  var fl = state.ftpLog.slice().sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+  var fb = document.getElementById("ftpTrend");
+  if (!fl.length){
+    fb.innerHTML = '<div class="empty">还没有 FTP 记录。<br>建议每 4-6 周测一次，形成长期曲线。</div>';
+  } else {
+    var last = fl[fl.length-1];
+    var wkg = (last.weight > 0) ? (last.ftp / last.weight).toFixed(2) : "—";
+    var first = fl[0];
+    var growth = (first && first.ftp > 0) ? Math.round((last.ftp - first.ftp) / first.ftp * 100) : null;
+    var h = '<div class="stats">' +
+      '<div class="stat hl"><div class="k">当前 FTP</div><div class="v">' + last.ftp + '<span class="u">W</span></div></div>' +
+      '<div class="stat"><div class="k">功率体重比</div><div class="v">' + wkg + '<span class="u">W/kg</span></div></div>' +
+      '<div class="stat"><div class="k">体重</div><div class="v">' + num(last.weight,1) + '<span class="u">kg</span></div></div>' +
+      '<div class="stat"><div class="k">累计涨幅</div><div class="v">' + (growth === null ? "—" : (growth >= 0 ? "+" : "") + growth + "%") + '</div></div>' +
+      '</div>';
+    h += fl.slice().reverse().map(function(f){
+      return '<div class="row"><div class="main"><div class="tt">' + esc(f.date) + ' · FTP ' + f.ftp + ' W' +
+        (f.weight ? ' · ' + num(f.weight,1) + ' kg · ' + (f.weight>0 ? (f.ftp/f.weight).toFixed(2) : "—") + ' W/kg' : '') + '</div>' +
+        '<div class="dd">' + esc(f.source || "") + '</div></div>' +
+        '<div class="acts"><button class="tiny" data-act="delFtp" data-id="' + esc(f.id) + '">删除</button></div></div>';
+    }).join("");
+    fb.innerHTML = h;
+  }
+
+  // 教练结论
+  var ns = state.notes.slice().sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+  document.getElementById("noteCount").textContent = ns.length + " 条";
+  var nb = document.getElementById("noteList");
+  if (!ns.length){
+    nb.innerHTML = '<div class="empty">还没有教练结论。<br>生成一次简报，把 AI 的「存档结论」粘回来，这里就会开始积累。</div>';
+  } else {
+    nb.innerHTML = ns.map(function(n){
+      return '<div class="row"><div class="main"><div class="tt">' + esc(n.date) + ' · ' + esc(n.title) +
+        (n.tags ? ' <span class="tag">' + esc(n.tags) + '</span>' : '') + '</div>' +
+        (n.body ? '<div class="dd">' + esc(n.body) + '</div>' : '') + '</div>' +
+        '<div class="acts"><button class="tiny" data-act="delNote" data-id="' + esc(n.id) + '">删除</button></div></div>';
+    }).join("");
+  }
+
+  // 伤病
+  var ib = document.getElementById("injuryList");
+  var is = state.injuries.slice().sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+  if (!is.length){
+    ib.innerHTML = '<div class="empty">暂无身体状态记录</div>';
+  } else {
+    ib.innerHTML = is.map(function(i){
+      return '<div class="row"><div class="main"><div class="tt">' + esc(i.date) + ' · ' + esc(i.part) + '</div>' +
+        (i.desc ? '<div class="dd">' + esc(i.desc) + '</div>' : '') + '</div>' +
+        '<div class="acts"><button class="tiny" data-act="delInjury" data-id="' + esc(i.id) + '">删除</button></div></div>';
+    }).join("");
+  }
+}
+
+function renderGoals(){
+  var gs = state.goals.slice().sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+  var gb = document.getElementById("goalList");
+  var t = todayStr();
+  if (!gs.length){
+    gb.innerHTML = '<div class="empty">还没有设定目标。<br>有了目标，AI 才能倒推周期计划。</div>';
+  } else {
+    gb.innerHTML = gs.map(function(g){
+      var dd = g.date ? diffDays(t, g.date) : null;
+      var badge = "";
+      if (dd !== null){
+        if (dd < 0) badge = '<span class="tag">已过期</span>';
+        else if (dd <= 14) badge = '<span class="tag red">仅剩 ' + dd + ' 天</span>';
+        else badge = '<span class="tag">剩 ' + dd + ' 天</span>';
+      }
+      return '<div class="row"><div class="main"><div class="tt">' + esc(g.title) + ' ' + badge + '</div>' +
+        '<div class="dd">' + esc(g.type || "") + (g.target ? ' · 目标：' + esc(g.target) : '') +
+        (g.date ? ' · ' + esc(g.date) : '') + '</div></div>' +
+        '<div class="acts"><button class="tiny" data-act="toggleGoal" data-id="' + esc(g.id) + '">' +
+        (g.status === "已完成" ? "重新开启" : "标记完成") + '</button>' +
+        '<button class="tiny" data-act="delGoal" data-id="' + esc(g.id) + '">删除</button></div></div>';
+    }).join("");
+  }
+
+  // 周计划
+  var ws = weekStartOf(t);
+  var pv = document.getElementById("planView");
+  var h = '<div class="grid tight" style="grid-template-columns:repeat(7,1fr);gap:6px">';
+  for (var i = 0; i < 7; i++){
+    var d = addDays(ws, i);
+    var p = state.plans[d];
+    var act = activityOn(d);
+    var isToday = (d === t);
+    var bg = "#fff", bd = "var(--line)";
+    if (isToday){ bd = "var(--brand)"; bg = "#f0fdfa"; }
+    else if (act){ bg = "#ecfdf5"; bd = "#a7f3d0"; }
+    else if (d < t && p && p.type && p.type !== "休息" && !p.skipped){ bg = "#fef2f2"; bd = "#fecaca"; }
+    h += '<div style="border:1px solid ' + bd + ';background:' + bg + ';border-radius:10px;padding:8px 6px;min-height:96px">';
+    h += '<div style="font-size:11.5px;color:var(--ink-3)">' + weekdayCN(d) + ' ' + mdLabel(d) + '</div>';
+    h += '<div style="font-size:12.5px;font-weight:600;margin:4px 0;line-height:1.3">' +
+         (p && p.type ? esc(p.type) : '<span style="color:var(--ink-3);font-weight:400">—</span>') + '</div>';
+    if (act){
+      h += '<div style="font-size:11px;color:var(--ok)">已完成 ' + num(act.load,0) + ' TSS</div>';
+    } else if (p && p.skipped){
+      h += '<div style="font-size:11px;color:var(--ink-3)">已跳过</div>';
+    } else if (d < t && p && p.type && p.type !== "休息"){
+      h += '<div style="font-size:11px;color:var(--danger)">未完成</div>';
+    }
+    h += '</div>';
+  }
+  h += '</div>';
+  pv.innerHTML = h;
+}
+
+function renderPlanEditor(){
+  var ws = weekStartOf(todayStr());
+  var types = ["", "休息", "恢复骑", "耐力骑", "甜区间歇", "VO2max 间歇", "阈值间歇", "长距离", "比赛 / 测试", "力量训练"];
+  var h = '<div class="grid tight">';
+  for (var i = 0; i < 7; i++){
+    var d = addDays(ws, i);
+    var cur = state.plans[d];
+    h += '<div class="f"><label>' + weekdayCN(d) + ' ' + mdLabel(d) + '</label>';
+    h += '<select data-plan-day="' + d + '">';
+    types.forEach(function(tp){
+      var sel = (cur && cur.type === tp) ? " selected" : "";
+      h += '<option value="' + tp + '"' + sel + '>' + (tp === "" ? "（不安排）" : tp) + '</option>';
+    });
+    h += '</select>';
+    h += '<input type="text" data-plan-detail="' + d + '" placeholder="备注（可选）" value="' + (cur && cur.detail ? esc(cur.detail) : "") + '" style="margin-top:4px">';
+    h += '</div>';
+  }
+  h += '</div>';
+  document.getElementById("planEditor").innerHTML = h;
+}
+
+function renderBriefMeta(){
+  var el = document.getElementById("briefMeta");
+  var b = document.getElementById("briefOut").value;
+  if (!b){ el.textContent = ""; return; }
+  var chars = b.length;
+  el.textContent = "简报已生成 · 约 " + chars + " 字符 · 含 " + state.notes.length + " 条历史教练结论 · " + weeklyLoads(4).length + " 周负荷对比";
+}
+
+function renderDataBanner(){
+  var el = document.getElementById("dataBanner");
+  var hasKey = !!state.settings.apiKey;
+  if (!hasKey){
+    el.innerHTML = '<div class="banner"><svg class="ic" style="margin-top:2px" viewBox="0 0 24 24"><path d="M12 9v5M12 17.5h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 001.7 3h15.8a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>' +
+      '<div>尚未连接 intervals.icu。连接后可直接拉取训练与体能数据，<b>彻底省掉截图和 OCR</b>。' +
+      '<button class="tiny" style="margin-left:6px" data-act="openApi">立即连接</button></div></div>';
+    return;
+  }
+  var last = state.settings.lastPull;
+  el.innerHTML = '<div class="banner ok"><svg class="ic" style="margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>' +
+    '<div>已连接 intervals.icu' + (last ? ' · 上次拉取 ' + esc(last) : ' · 尚未拉取过数据') +
+    ' · 共 ' + state.activities.length + ' 条训练 / ' + state.wellness.length + ' 天体能数据</div></div>';
+}
+
+function renderApiStatus(){
+  var el = document.getElementById("apiStatus");
+  var hasKey = !!state.settings.apiKey;
+  if (!hasKey){ el.textContent = "当前为手动录入模式。"; return; }
+  el.textContent = "已保存 API Key" + (state.settings.lastPull ? "，上次拉取：" + state.settings.lastPull : "，尚未拉取");
+}
+
+/* ---------- 统一刷新入口（唯一调度点） ---------- */
+function fmtSec(s){
+  var m = Math.floor(s / 60), ss = Math.round(s % 60);
+  return m + ":" + (ss < 10 ? "0" : "") + ss;
+}
+// 分段统计：组汇总 + 逐段明细 + 功率区间分布
+function renderIntervals(){
+  var box = document.getElementById("intervalView");
+  if (!box) return;
+  var recent = getActivitiesSorted();
+  var base = currentRide();
+  var a = rideWithIntervals();
+  var note = "";
+  if (a && base && String(a.id) !== String(base.id)){
+    note = '<div class="hint">最近一次训练（' + esc(base.date) + '）没有分段数据，下面显示 <b>' +
+      esc(a.date) + ' · ' + esc(a.name || "未命名") + '</b> 的分段。</div>';
+  }
+  if (!a){
+    box.innerHTML = '<div class="empty">还没有训练数据，拉取后这里会显示每次的分段统计。</div>';
+    return;
+  }
+  var h = note;
+  if (!note){
+    h += '<div class="hint" style="margin-bottom:6px">' + esc(a.date) + ' · <b>' + esc(a.name || "未命名") + '</b> 的分段数据</div>';
+  }
+  var groups = a.intervalGroups || [];
+  var ivs = (a.intervals || []).filter(function(v){ return v.type === "WORK"; });
+  var all = a.intervals || [];
+
+  if (!groups.length && !all.length){
+    h += '<div class="empty">这次训练还没有分段数据。' +
+      (a.source === "icu" ? '点「拉取数据」后再点「补拉分段」，或这是没有自动分段的连续骑行。' : '分段数据来自 intervals.icu，手动补录的记录没有分段。') + '</div>';
+  }
+
+  // 1) 组汇总（如 5×4min）
+  if (groups.length){
+    h += '<div class="tbl-wrap"><table class="tbl"><thead><tr><th>组</th><th>次数</th><th>单段时长</th><th>平均功率</th><th>NP</th><th>心率</th><th>踏频</th><th>负荷</th></tr></thead><tbody>';
+    groups.forEach(function(g){
+      h += '<tr><td>' + esc(g.label || "分组") + '</td><td>' + num(g.count,0) + '</td><td>' + (g.count ? fmtSec(g.sec / (g.count||1)) : fmtSec(g.sec)) +
+        '</td><td>' + num(g.ap,0) + ' W</td><td>' + num(g.np,0) + ' W</td><td>' + num(g.hr,0) + '</td><td>' + num(g.cad,0) +
+        '</td><td>' + num(g.load,0) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+
+  // 2) 逐段明细（折叠）
+  if (all.length){
+    var workList = ivs.length ? ivs : all;
+    h += '<div style="margin-top:10px"><button class="tiny" id="btnToggleLaps">展开逐段明细（' + workList.length + ' 段）</button></div>';
+    h += '<div id="lapTable" style="display:none;margin-top:8px"><div class="tbl-wrap"><table class="tbl"><thead><tr>' +
+      '<th>#</th><th>时长</th><th>距离</th><th>平均功率</th><th>NP</th><th>心率</th><th>踏频</th><th>爬升</th><th>末段 W\'bal</th></tr></thead><tbody>';
+    workList.forEach(function(v, i){
+      h += '<tr><td>' + (i + 1) + '</td><td>' + fmtSec(v.sec) + '</td><td>' + num(v.dist/1000, 2) + ' km</td>' +
+        '<td>' + num(v.ap,0) + ' W</td><td>' + num(v.np,0) + ' W</td><td>' + num(v.hr,0) + (v.hrMax ? ' / ' + num(v.hrMax,0) : '') + '</td>' +
+        '<td>' + num(v.cad,0) + '</td><td>' + num(v.ele,0) + ' m</td><td>' + (v.wbalEnd ? num(v.wbalEnd,0) + ' J' : "—") + '</td></tr>';
+    });
+    h += '</tbody></table></div></div>';
+  }
+
+  // 3) 功率区间时间分布（内联 SVG 手写条形图）
+  var zt = (a.zoneTimes || []).filter(function(z){ return z && z.secs > 0; });
+  if (zt.length){
+    var maxS = zt.reduce(function(m, z){ return Math.max(m, z.secs); }, 1);
+    var bw = 620, rowH = 22, H = zt.length * rowH + 8, labelW = 34, valW = 52;
+    var svg = '<svg viewBox="0 0 680 ' + H + '" width="100%" height="' + H + '" preserveAspectRatio="xMinYMin meet" role="img" aria-label="功率区间时间分布">';
+    var colors = ["#94a3b8", "#38bdf8", "#22c55e", "#eab308", "#f97316", "#ef4444", "#b91c1c", "#7f1d1d", "#450a0a"];
+    var total = zt.reduce(function(s, z){ return s + z.secs; }, 0);
+    zt.forEach(function(z, i){
+      var w = Math.max(2, (z.secs / maxS) * (bw - labelW - valW));
+      var y = i * rowH + 4;
+      svg += '<text x="0" y="' + (y + 12) + '" font-size="11" fill="#64748b">Z' + (z.id !== undefined ? z.id : (i + 1)) + '</text>';
+      svg += '<rect x="' + labelW + '" y="' + y + '" width="' + w + '" height="14" rx="3" fill="' + (colors[i] || "#64748b") + '"/>';
+      svg += '<text x="' + (labelW + w + 6) + '" y="' + (y + 12) + '" font-size="11" fill="#334155">' +
+        Math.round(z.secs / 60) + ' 分（' + (total ? Math.round(z.secs / total * 100) : 0) + '%）</text>';
+    });
+    svg += '</svg>';
+    h += '<div style="margin-top:12px"><div class="sec-t">功率区间时间分布</div>' + svg +
+      (a.polarization ? '<div class="hint">极化指数 PI：' + num(a.polarization,2) + '（>2.0 偏极化，<1.5 偏阈值堆积）</div>' : '') + '</div>';
+  }
+  box.innerHTML = h;
+  var bt = document.getElementById("btnToggleLaps");
+  if (bt) bt.addEventListener("click", function(){
+    var t = document.getElementById("lapTable");
+    if (!t) return;
+    var show = t.style.display === "none";
+    t.style.display = show ? "block" : "none";
+    bt.textContent = show ? "收起逐段明细" : "展开逐段明细（" + ((ivs.length ? ivs : all).length) + " 段）";
+  });
+}
+
+function refreshAll(){
+  renderDataBanner();
+  document.getElementById("btnClearDemo").style.display = hasDemo() ? "inline-flex" : "none";
+  renderToday();
+  renderRideView();
+  renderIntervals();
+  renderTrends();
+  renderArchive();
+  renderGoals();
+  renderApiStatus();
+  renderBriefMeta();
+}
+
+/* =========================================================
+   intervals.icu API
+   ========================================================= */
+function pick(o, keys){
+  for (var i = 0; i < keys.length; i++){
+    if (o && o[keys[i]] !== undefined && o[keys[i]] !== null) return o[keys[i]];
+  }
+  return undefined;
+}
+function icuAuth(){
+  return "Basic " + btoa("API_KEY:" + state.settings.apiKey);
+}
+function icuBase(){
+  var id = (state.settings.athleteId && state.settings.athleteId.trim()) || "0";
+  return "https://intervals.icu/api/v1/athlete/" + encodeURIComponent(id);
+}
+// 分段接口不在 /athlete/{id} 之下，单独用根路径
+function icuRoot(){ return "https://intervals.icu/api/v1"; }
+async function icuGetRaw(path){
+  var res = await fetch(icuRoot() + path, {
+    method: "GET",
+    headers: { "Authorization": icuAuth(), "Accept": "application/json" }
+  });
+  if (!res.ok) throw new Error("HTTP " + res.status + "（" + (res.status === 401 ? "API Key 无效" : res.status === 404 ? "地址不存在" : "请求失败") + "）");
+  return await res.json();
+}
+async function icuGet(path){
+  var res = await fetch(icuBase() + path, {
+    method: "GET",
+    headers: { "Authorization": icuAuth(), "Accept": "application/json" }
+  });
+  if (!res.ok) throw new Error("HTTP " + res.status + "（" + (res.status === 401 ? "API Key 无效" : res.status === 404 ? "地址不存在" : "请求失败") + "）");
+  return await res.json();
+}
+
+function nOrNull(x){ var n = Number(x); return isNaN(n) ? 0 : n; }
+function mapActivity(a){
+  var dateRaw = pick(a, ["start_date_local", "startDateLocal", "start_date", "startDate"]) || "";
+  var date = String(dateRaw).slice(0, 10);
+  var dur = pick(a, ["moving_time", "movingTime", "elapsed_time", "duration", "icu_moving_time"]);
+  // 当日体能状态：活动对象自带 icu_ctl / icu_atl；TSB = CTL - ATL
+  var ctl = nOrNull(pick(a, ["icu_ctl", "ctl"]));
+  var atl = nOrNull(pick(a, ["icu_atl", "atl"]));
+  // HRR：心率恢复，可能是对象或数字
+  var hrrRaw = a.icu_hrr;
+  var hrr = 0;
+  if (typeof hrrRaw === "object" && hrrRaw !== null) hrr = nOrNull(hrrRaw.recovery || hrrRaw.delta || hrrRaw.value);
+  else hrr = nOrNull(hrrRaw);
+  return {
+    id: String(pick(a, ["id"]) || ("icu_" + date + "_" + Math.random().toString(36).slice(2,8))),
+    date: date,
+    name: pick(a, ["name", "activityName"]) || "骑行",
+    type: pick(a, ["type", "sport"]) || "Ride",
+    subType: pick(a, ["sub_type", "subType", "workout_type"]) || "",
+    durationSec: Number(dur) || 0,
+    distance: Number(pick(a, ["distance", "icu_distance"])) || 0,
+    load: Number(pick(a, ["icu_training_load", "training_load", "load", "trimp"])) || 0,
+    intensity: nOrNull(pick(a, ["icu_intensity", "intensity"])),           // 强度 %
+    np: Number(pick(a, ["icu_weighted_avg_watts", "weighted_average_watts", "weightedAverageWatts", "np"])) || 0,
+    avgPower: Number(pick(a, ["icu_average_watts", "average_watts", "averageWatts", "icu_average_watts"])) || 0,
+    kilojoules: Number(pick(a, ["icu_joules", "kilojoules", "icu_kilojoules", "kJ"])) || 0,
+    calories: nOrNull(pick(a, ["calories"])),                              // 热量 kcal
+    carbsUsed: nOrNull(pick(a, ["carbs_used"])),                           // 碳水消耗 g
+    carbsIngested: nOrNull(pick(a, ["carbs_ingested"])),                   // 碳水摄入 g
+    elevation: Number(pick(a, ["total_elevation_gain", "elevation_gain", "totalElevationGain"])) || 0,
+    avgHr: Number(pick(a, ["average_heartrate", "averageHeartrate", "avg_hr"])) || 0,
+    maxHr: Number(pick(a, ["max_heartrate", "maxHeartrate", "max_hr"])) || 0,
+    cadence: nOrNull(pick(a, ["average_cadence", "averageCadence", "avg_cad"])),  // 踏频 rpm
+    avgSpeed: nOrNull(pick(a, ["average_speed", "averageSpeed"])),          // m/s，展示时 ×3.6
+    coastingSec: nOrNull(pick(a, ["coasting_time", "coastingTime"])),       // 滑行秒数
+    vi: nOrNull(pick(a, ["icu_variability_index", "variability_index"])),   // 变异性
+    ef: nOrNull(pick(a, ["icu_efficiency_factor", "efficiency_factor"])),   // 效率 NP/HR
+    powerHr: nOrNull(pick(a, ["icu_power_hr"])),                            // 功率/心率
+    decoupling: nOrNull(pick(a, ["decoupling", "power_hr", "icu_decoupling"])),
+    trimp: nOrNull(pick(a, ["trimp"])),
+    hrr: hrr,                                                              // 心率恢复
+    rpe: nOrNull(pick(a, ["icu_rpe", "perceived_exertion"])),               // RPE
+    feel: (a.feel === 0 ? 0 : nOrNull(a.feel)),                             // 感受
+    sessionRpe: nOrNull(a.session_rpe),                                    // S-RPE
+    ctl: ctl, atl: atl, tsb: (ctl && atl ? +(ctl - atl).toFixed(1) : 0),    // 当日健康度/疲劳度/状态值
+    strain: nOrNull(a.strain_score),                                       // 体力
+    eFtp: nOrNull(pick(a, ["icu_pm_ftp"])),                                // eFTP（临界功率模型）
+    rollingFtp: nOrNull(pick(a, ["icu_rolling_ftp"])),                     // 活动 eFTP（滚动估算）
+    wprime: nOrNull(pick(a, ["icu_w_prime"])),                             // W'
+    pmax: nOrNull(pick(a, ["p_max", "icu_pm_p_max", "ss_p_max"])),         // Pmax
+    // 区间时间分布（活动列表接口自带 icu_zone_times：[{id,secs}]）
+    zoneTimes: (Array.isArray(a.icu_zone_times) ? a.icu_zone_times.slice(0, 9) : []),
+    hrZoneTimes: (Array.isArray(a.icu_hr_zone_times) ? a.icu_hr_zone_times.slice(0, 9) : []),
+    polarization: nOrNull(a.polarization_index),
+    icuFtp: Number(pick(a, ["icu_ftp", "ftp"])) || 0,                      // 当时 FTP
+    source: "icu"
+  };
+}
+function mapInterval(v){
+  return {
+    label: v.label || "",
+    type: v.type || "",
+    sec: nOrNull(v.moving_time || v.elapsed_time),
+    dist: nOrNull(v.distance),
+    ap: nOrNull(v.average_watts),
+    np: nOrNull(v.weighted_average_watts),
+    hr: nOrNull(v.average_heartrate),
+    hrMax: nOrNull(v.max_heartrate),
+    cad: nOrNull(v.average_cadence),
+    ele: nOrNull(v.total_elevation_gain),
+    load: nOrNull(v.training_load),
+    wbalEnd: nOrNull(v.wbal_end),
+    vi: nOrNull(v.w5s_variability)
+  };
+}
+function mapIntervalGroup(g){
+  return {
+    label: g.label || "",
+    count: nOrNull(g.count),
+    sec: nOrNull(g.moving_time || g.elapsed_time),
+    ap: nOrNull(g.average_watts),
+    np: nOrNull(g.weighted_average_watts),
+    hr: nOrNull(g.average_heartrate),
+    cad: nOrNull(g.average_cadence),
+    ele: nOrNull(g.total_elevation_gain),
+    load: nOrNull(g.training_load)
+  };
+}
+// 为最近 limit 条 ICU 活动补拉分段数据（已拉过的跳过）
+async function fetchIntervalsFor(limit){
+  var list = state.activities.filter(function(a){
+    return a.source === "icu" && a.id && !(a.intervals && a.intervals.length) && !a.intervalsFetched;
+  }).sort(function(x, y){ return x.date < y.date ? 1 : -1; }).slice(0, limit || 10);
+  var got = 0;
+  for (var i = 0; i < list.length; i++){
+    var a = list[i];
+    try {
+      var dto = await icuGetRaw("/activity/" + encodeURIComponent(a.id) + "/intervals");
+      var iv = Array.isArray(dto && dto.icu_intervals) ? dto.icu_intervals : [];
+      var gp = Array.isArray(dto && dto.icu_groups) ? dto.icu_groups : [];
+      a.intervalsFetched = true;
+      if (iv.length || gp.length){
+        a.intervals = iv.map(mapInterval);
+        a.intervalGroups = gp.map(mapIntervalGroup);
+        got++;
+      }
+    } catch(e){ a.intervalsFetched = false; /* 单条失败不阻断 */ }
+  }
+  return got;
+}
+function mapWellness(w){
+  return {
+    id: String(pick(w, ["id", "date"]) || "").slice(0, 10),
+    ctl: Number(pick(w, ["ctl", "fitness"])) || 0,
+    atl: Number(pick(w, ["atl", "fatigue"])) || 0,
+    tsb: Number(pick(w, ["tsb", "form"])) || 0,
+    rampRate: Number(pick(w, ["rampRate", "ramp_rate"])) || 0,
+    weight: Number(pick(w, ["weight"])) || 0,
+    restingHR: Number(pick(w, ["restingHR", "resting_hr", "restingHeartRate"])) || 0,
+    hrv: Number(pick(w, ["hrv", "hrvSDNN"])) || 0,
+    sleepSecs: Number(pick(w, ["sleepSecs", "sleep_secs"])) || 0,
+    soreness: Number(pick(w, ["soreness"])) || 0,
+    fatigue: Number(pick(w, ["fatigue"])) || 0,
+    mood: Number(pick(w, ["mood"])) || 0
+  };
+}
+
+async function pullFromICU(start, end){
+  var acts = await icuGet("/activities?oldest=" + start + "&newest=" + end);
+  var arrA = Array.isArray(acts) ? acts : [];
+  var addedA = 0;
+  arrA.forEach(function(a){
+    var m = mapActivity(a);
+    if (!m.date) return;
+    var i = state.activities.findIndex(function(x){ return String(x.id) === String(m.id); });
+    if (i >= 0){
+      // 重新拉取时保留已获取的分段数据（分段需单独请求，不必每次重拉）
+      var old = state.activities[i];
+      m.intervals = old.intervals || [];
+      m.intervalGroups = old.intervalGroups || [];
+      m.intervalsFetched = !!old.intervalsFetched;
+      state.activities[i] = m;
+    }
+    else { state.activities.push(m); addedA++; }
+  });
+
+  var well = await icuGet("/wellness?oldest=" + start + "&newest=" + end);
+  var arrW = Array.isArray(well) ? well : [];
+  var addedW = 0;
+  arrW.forEach(function(w){
+    var m = mapWellness(w);
+    if (!m.id) return;
+    var i = state.wellness.findIndex(function(x){ return x.id === m.id; });
+    if (i >= 0) state.wellness[i] = m;
+    else { state.wellness.push(m); addedW++; }
+  });
+
+  // 顺带更新 FTP / 体重
+  try {
+    var prof = await icuGet("/profile");
+    var ftp = Number(pick(prof, ["icu_ftp", "ftp"]));
+    var wt = Number(pick(prof, ["icu_weight", "weight"]));
+    if (ftp > 0) state.settings.ftp = ftp;
+    if (wt > 0) state.settings.weight = wt;
+  } catch(e){ /* profile 失败不影响主流程 */ }
+
+  state.settings.lastPull = todayStr();
+  saveData();
+  return { acts: addedA, well: addedW, totalA: arrA.length, totalW: arrW.length };
+}
+
+/* =========================================================
+   UI 交互（事件处理 → 改数据 → saveData → refreshAll）
+   ========================================================= */
+var toastTimer = null;
+function toast(msg){
+  var el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("on"); }, 2400);
+}
+
+var confirmCb = null;
+function askConfirm(title, body, cb){
+  document.getElementById("mkTitle").textContent = title;
+  document.getElementById("mkBody").textContent = body;
+  confirmCb = cb;
+  document.getElementById("mask").classList.add("on");
+}
+function closeConfirm(){ document.getElementById("mask").classList.remove("on"); confirmCb = null; }
+
+function switchTab(name){
+  var btns = document.querySelectorAll("#tabs button");
+  for (var i = 0; i < btns.length; i++){
+    btns[i].classList.toggle("on", btns[i].getAttribute("data-tab") === name);
+  }
+  var panes = document.querySelectorAll(".pane");
+  for (var j = 0; j < panes.length; j++){
+    panes[j].classList.toggle("on", panes[j].id === "pane-" + name);
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function exportJSON(){
+  var blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "cycling-coach-backup-" + todayStr() + ".json";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  toast("已导出备份文件");
+}
+
+function doImport(file){
+  var r = new FileReader();
+  r.onload = function(){
+    try {
+      var p = JSON.parse(r.result);
+      if (!p || typeof p !== "object") throw new Error("格式错误");
+      askConfirm("导入数据", "导入将覆盖当前全部数据，确定继续吗？", function(){
+        state = Object.assign(deepCopy(DEFAULT_STATE), p);
+        ["activities","wellness","ftpLog","notes","injuries","goals"].forEach(function(k){
+          if (!Array.isArray(state[k])) state[k] = [];
+        });
+        if (!state.plans || typeof state.plans !== "object") state.plans = {};
+        if (!state.settings) state.settings = deepCopy(DEFAULT_STATE.settings);
+        saveData();
+        refreshAll();
+        toast("导入成功，共 " + state.activities.length + " 条训练记录");
+      });
+    } catch(e){
+      toast("导入失败：文件不是有效的备份 JSON");
+    }
+  };
+  r.readAsText(file);
+}
+
+/* ---------- 从 AI 回复中提取存档结论 ---------- */
+function extractNotes(text){
+  var lines = String(text).split(/\r?\n/);
+  var out = [];
+  var re = /^\s*[-•*]\s*(\d{4}-\d{2}-\d{2})\s*[：:]\s*(.+?)\s*$/;
+  var re2 = /^\s*(\d{4}-\d{2}-\d{2})\s*[：:]\s*(.+?)\s*$/;
+  for (var i = 0; i < lines.length; i++){
+    var m = lines[i].match(re) || lines[i].match(re2);
+    if (m){
+      var body = m[2].replace(/[*_`]/g, "").trim();
+      if (body.length > 0 && body.length <= 200) out.push({ date: m[1], title: body, body: "", tags: "AI 结论" });
+    }
+  }
+  return out;
+}
+
+/* =========================================================
+   初始化
+   ========================================================= */
+function bindStatic(){
+  // tabs
+  document.getElementById("tabs").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-tab]");
+    if (b) switchTab(b.getAttribute("data-tab"));
+  });
+
+  // 导出 / 导入 / 清空
+  document.getElementById("btnExport").addEventListener("click", exportJSON);
+  document.getElementById("btnImport").addEventListener("click", function(){
+    document.getElementById("fileInput").click();
+  });
+  document.getElementById("fileInput").addEventListener("change", function(e){
+    if (e.target.files && e.target.files[0]) doImport(e.target.files[0]);
+    e.target.value = "";
+  });
+  document.getElementById("btnClear").addEventListener("click", function(){
+    askConfirm("清空全部数据", "将删除所有训练记录、教练档案、目标与计划，且无法恢复。建议先导出备份。确定清空吗？", function(){
+      state = deepCopy(DEFAULT_STATE);
+      state.seeded = true;
+      saveData();
+      refreshAll();
+      toast("已清空全部数据");
+    });
+  });
+
+  // 确认弹窗
+  document.getElementById("mkNo").addEventListener("click", closeConfirm);
+  document.getElementById("mkYes").addEventListener("click", function(){
+    if (confirmCb) confirmCb();
+    closeConfirm();
+  });
+  document.getElementById("mask").addEventListener("click", function(e){
+    if (e.target === this) closeConfirm();
+  });
+
+  // API 设置
+  document.getElementById("btnToggleApi").addEventListener("click", function(){
+    var b = document.getElementById("apiBox");
+    b.style.display = (b.style.display === "none") ? "block" : "none";
+  });
+  document.getElementById("apiKey").addEventListener("change", function(){
+    state.settings.apiKey = this.value.trim();
+    saveData(); refreshAll();
+  });
+  document.getElementById("athleteId").addEventListener("change", function(){
+    state.settings.athleteId = this.value.trim() || "0";
+    saveData();
+  });
+
+  // 测试连接
+  document.getElementById("btnTest").addEventListener("click", async function(){
+    var key = document.getElementById("apiKey").value.trim();
+    if (!key){ toast("请先填写 API Key"); return; }
+    state.settings.apiKey = key;
+    state.settings.athleteId = document.getElementById("athleteId").value.trim() || "0";
+    saveData();
+    this.disabled = true; this.textContent = "测试中…";
+    try {
+      var p = await icuGet("/profile");
+      toast("连接成功：" + (p.name || p.id || "已获取账户信息"));
+      renderApiStatus(); renderDataBanner();
+    } catch(e){
+      toast("连接失败：" + e.message);
+    } finally {
+      this.disabled = false; this.textContent = "测试连接";
+    }
+  });
+
+  // 拉取
+  document.getElementById("btnPull").addEventListener("click", async function(){
+    var key = document.getElementById("apiKey").value.trim();
+    if (!key){ toast("请先填写 API Key"); return; }
+    state.settings.apiKey = key;
+    state.settings.athleteId = document.getElementById("athleteId").value.trim() || "0";
+    var s = document.getElementById("pullStart").value;
+    var e = document.getElementById("pullEnd").value;
+    if (!s || !e){ toast("请选择起止日期"); return; }
+    if (s > e){ toast("起始日期不能晚于结束日期"); return; }
+    this.disabled = true; this.textContent = "拉取中…";
+    try {
+      var r = await pullFromICU(s, e);
+      var laps = 0;
+      try { laps = await fetchIntervalsFor(12); } catch(e2){ /* 分段失败不影响主流程 */ }
+      refreshAll();
+      toast("拉取完成：新增 " + r.acts + " 条训练、" + r.well + " 天体能数据" + (laps ? "，并补拉 " + laps + " 次训练的分段" : ""));
+    } catch(err){
+      toast("拉取失败：" + err.message);
+    } finally {
+      this.disabled = false; this.textContent = "拉取数据";
+    }
+  });
+
+  document.getElementById("btnFetchLaps").addEventListener("click", async function(){
+    var key = document.getElementById("apiKey").value.trim() || state.settings.apiKey;
+    if (!key){ toast("请先填写 API Key"); return; }
+    state.settings.apiKey = key;
+    this.disabled = true; this.textContent = "补拉中…";
+    try {
+      var n = await fetchIntervalsFor(12);
+      saveData(); refreshAll();
+      toast(n ? "已补拉 " + n + " 次训练的分段数据" : "没有需要补拉的分段（可能已拉过或活动无自动分段）");
+    } catch(err){
+      toast("补拉失败：" + err.message);
+    } finally {
+      this.disabled = false; this.textContent = "补拉分段";
+    }
+  });
+
+  document.getElementById("btnCopyRide").addEventListener("click", function(){
+    copyText(buildRideOnly());
+  });
+
+  // 今天要处理：一键拉取今日数据（按钮与待办条目共用同一入口）
+  var pullTodayBtn = document.getElementById("btnPullToday");
+  if (pullTodayBtn) pullTodayBtn.addEventListener("click", function(){ runPullToday(pullTodayBtn); });
+
+  // 手动补录
+  document.getElementById("btnManual").addEventListener("click", function(){
+    var b = document.getElementById("manualBox");
+    b.style.display = (b.style.display === "none") ? "block" : "none";
+    if (b.style.display === "block" && !document.getElementById("mDate").value){
+      document.getElementById("mDate").value = todayStr();
+    }
+  });
+  document.getElementById("btnCancelManual").addEventListener("click", function(){
+    document.getElementById("manualBox").style.display = "none";
+  });
+  document.getElementById("btnMoreDims").addEventListener("click", function(){
+    var d = document.getElementById("mMoreDims");
+    d.style.display = (d.style.display === "none") ? "grid" : "none";
+  });
+  document.getElementById("btnSaveManual").addEventListener("click", function(){
+    var date = document.getElementById("mDate").value;
+    if (!date){ toast("请选择日期"); return; }
+    var v = function(id){ return document.getElementById(id).value; };
+    var a = {
+      id: "m_" + date + "_" + Date.now(),
+      date: date,
+      name: v("mName") || "骑行",
+      type: "Ride",
+      durationSec: Math.round((Number(v("mDur")) || 0) * 60),
+      distance: Math.round((Number(v("mDist")) || 0) * 1000),
+      load: Number(v("mLoad")) || 0,
+      np: Number(v("mNp")) || 0,
+      avgPower: Number(v("mAp")) || 0,
+      kilojoules: Number(v("mKj")) || 0,
+      elevation: Number(v("mEle")) || 0,
+      avgHr: Number(v("mHr")) || 0,
+      maxHr: Number(v("mHrMax")) || 0,
+      decoupling: Number(v("mDec")) || 0,
+      source: "manual"
+    };
+    state.activities.push(a);
+    saveData();
+    document.getElementById("manualBox").style.display = "none";
+    ["mName","mDur","mDist","mLoad","mNp","mAp","mKj","mEle","mHr","mHrMax","mDec","mCad","mSpd","mVi","mEf","mTrimp","mRpe"].forEach(function(id){
+      document.getElementById(id).value = "";
+    });
+    refreshAll();
+    toast("已保存 " + date + " 的训练记录");
+  });
+
+  // 简报
+  document.getElementById("btnGenBrief").addEventListener("click", function(){
+    document.getElementById("briefOut").value = buildBrief();
+    document.getElementById("btnGenBrief2").style.display = "inline-flex";
+    renderBriefMeta();
+    toast("简报已生成，点击右上角复制");
+  });
+  document.getElementById("btnGenBrief2").addEventListener("click", function(){
+    document.getElementById("briefOut").value = buildBrief();
+    renderBriefMeta();
+    toast("简报已刷新");
+  });
+  document.getElementById("btnCopyBrief").addEventListener("click", function(){
+    var ta = document.getElementById("briefOut");
+    if (!ta.value){ ta.value = buildBrief(); renderBriefMeta(); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(function(){ toast("已复制，去粘贴给 AI 教练吧"); })
+        .catch(function(){ ta.select(); document.execCommand("copy"); toast("已复制"); });
+    } else {
+      ta.select();
+      try { document.execCommand("copy"); toast("已复制"); } catch(e){ toast("复制失败，请手动全选复制"); }
+    }
+  });
+
+  // 回存结论
+  document.getElementById("btnExtract").addEventListener("click", function(){
+    var txt = document.getElementById("pasteBack").value;
+    if (!txt.trim()){ toast("请先粘贴 AI 的回复"); return; }
+    var got = extractNotes(txt);
+    var box = document.getElementById("extractResult");
+    if (!got.length){
+      box.innerHTML = '<div class="banner"><svg class="ic" style="margin-top:2px" viewBox="0 0 24 24"><path d="M12 9v5M12 17.5h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 001.7 3h15.8a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>' +
+        '<div>没识别到「- 日期：结论」格式的行。可以手动添加，或提醒 AI 按简报要求输出存档结论。</div></div>';
+      return;
+    }
+    got.forEach(function(n){
+      n.id = "n_" + Date.now() + "_" + Math.random().toString(36).slice(2,7);
+      state.notes.push(n);
+    });
+    saveData();
+    document.getElementById("pasteBack").value = "";
+    refreshAll();
+    box.innerHTML = '<div class="banner ok"><svg class="ic" style="margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>' +
+      '<div>已存入 ' + got.length + ' 条结论，下次生成简报时会自动带上。</div></div>';
+    toast("已存入 " + got.length + " 条教练结论");
+  });
+  document.getElementById("btnAddManualNote").addEventListener("click", function(){
+    var b = document.getElementById("noteAddBox");
+    if (b.style.display === "none"){
+      b.style.display = "block";
+      if (!document.getElementById("nDate").value) document.getElementById("nDate").value = todayStr();
+      document.getElementById("nTitle").focus();
+    } else b.style.display = "none";
+  });
+  document.getElementById("btnCancelNote").addEventListener("click", function(){
+    document.getElementById("noteAddBox").style.display = "none";
+    document.getElementById("nTitle").value = "";
+  });
+  document.getElementById("btnSaveNote").addEventListener("click", function(){
+    var t = document.getElementById("nTitle").value.trim();
+    if (!t){ toast("请填写结论内容"); return; }
+    state.notes.push({
+      id: "n_" + Date.now(), date: document.getElementById("nDate").value || todayStr(),
+      title: t, body: "", tags: document.getElementById("nTag").value
+    });
+    saveData();
+    document.getElementById("noteAddBox").style.display = "none";
+    document.getElementById("nTitle").value = "";
+    refreshAll();
+    toast("已存入档案，下次简报自动带上");
+  });
+
+  // 清空示例数据（只删示例，不误删用户录入内容）
+  document.getElementById("btnClearDemo").addEventListener("click", function(){
+    askConfirm("清空示例数据", "只删除带示例标记的预置内容，你自己录入的数据不受影响。确定吗？", function(){
+      ["activities","wellness","ftpLog","notes","injuries","goals"].forEach(function(k){
+        state[k] = state[k].filter(function(x){ return !x.demo; });
+      });
+      Object.keys(state.plans).forEach(function(kk){
+        if (state.plans[kk] && state.plans[kk].demo) delete state.plans[kk];
+      });
+      saveData(); refreshAll();
+      toast("示例数据已清空");
+    });
+  });
+
+  // FTP
+  document.getElementById("btnAddFtp").addEventListener("click", function(){
+    var b = document.getElementById("ftpBox");
+    b.style.display = (b.style.display === "none") ? "block" : "none";
+    if (b.style.display === "block" && !document.getElementById("fDate").value){
+      document.getElementById("fDate").value = todayStr();
+    }
+  });
+  document.getElementById("btnCancelFtp").addEventListener("click", function(){ document.getElementById("ftpBox").style.display = "none"; });
+  document.getElementById("btnSaveFtp").addEventListener("click", function(){
+    var d = document.getElementById("fDate").value;
+    var f = Number(document.getElementById("fFtp").value);
+    if (!d || !f){ toast("请填写日期和 FTP"); return; }
+    state.ftpLog.push({
+      id: "f_" + Date.now(), date: d, ftp: f,
+      weight: Number(document.getElementById("fWeight").value) || 0,
+      source: document.getElementById("fSrc").value
+    });
+    state.settings.ftp = f;
+    var w = Number(document.getElementById("fWeight").value);
+    if (w > 0) state.settings.weight = w;
+    saveData();
+    document.getElementById("ftpBox").style.display = "none";
+    document.getElementById("fFtp").value = "";
+    document.getElementById("fWeight").value = "";
+    refreshAll();
+    toast("已记录 FTP " + f + " W");
+  });
+
+  // 伤病
+  document.getElementById("btnAddInjury").addEventListener("click", function(){
+    var b = document.getElementById("injuryBox");
+    b.style.display = (b.style.display === "none") ? "block" : "none";
+    if (b.style.display === "block" && !document.getElementById("iDate").value){
+      document.getElementById("iDate").value = todayStr();
+    }
+  });
+  document.getElementById("btnCancelInjury").addEventListener("click", function(){ document.getElementById("injuryBox").style.display = "none"; });
+  document.getElementById("btnSaveInjury").addEventListener("click", function(){
+    var d = document.getElementById("iDate").value;
+    var p = document.getElementById("iPart").value.trim();
+    if (!d || !p){ toast("请填写日期和部位"); return; }
+    state.injuries.push({ id: "i_" + Date.now(), date: d, part: p, desc: document.getElementById("iDesc").value.trim() });
+    saveData();
+    document.getElementById("injuryBox").style.display = "none";
+    document.getElementById("iPart").value = "";
+    document.getElementById("iDesc").value = "";
+    refreshAll();
+    toast("已记录");
+  });
+
+  // 目标
+  document.getElementById("btnAddGoal").addEventListener("click", function(){
+    var b = document.getElementById("goalBox");
+    b.style.display = (b.style.display === "none") ? "block" : "none";
+  });
+  document.getElementById("btnCancelGoal").addEventListener("click", function(){ document.getElementById("goalBox").style.display = "none"; });
+  document.getElementById("btnSaveGoal").addEventListener("click", function(){
+    var t = document.getElementById("gTitle").value.trim();
+    if (!t){ toast("请填写目标名称"); return; }
+    state.goals.push({
+      id: "g_" + Date.now(), title: t, type: document.getElementById("gType").value,
+      date: document.getElementById("gDate").value, target: document.getElementById("gTarget").value.trim(),
+      status: "进行中"
+    });
+    saveData();
+    document.getElementById("goalBox").style.display = "none";
+    document.getElementById("gTitle").value = "";
+    document.getElementById("gTarget").value = "";
+    refreshAll();
+    toast("目标已添加");
+  });
+
+  // 计划
+  document.getElementById("btnAddPlan").addEventListener("click", function(){
+    var b = document.getElementById("planBox");
+    if (b.style.display === "none"){ renderPlanEditor(); b.style.display = "block"; }
+    else b.style.display = "none";
+  });
+  document.getElementById("btnCancelPlan").addEventListener("click", function(){ document.getElementById("planBox").style.display = "none"; });
+  document.getElementById("btnSavePlan").addEventListener("click", function(){
+    var ws = weekStartOf(todayStr());
+    for (var i = 0; i < 7; i++){
+      var d = addDays(ws, i);
+      var sel = document.querySelector('[data-plan-day="' + d + '"]');
+      var det = document.querySelector('[data-plan-detail="' + d + '"]');
+      if (!sel) continue;
+      var tp = sel.value;
+      if (!tp){ delete state.plans[d]; }
+      else { state.plans[d] = { type: tp, detail: det ? det.value.trim() : "" }; }
+    }
+    saveData();
+    document.getElementById("planBox").style.display = "none";
+    refreshAll();
+    toast("本周计划已保存");
+  });
+
+  // 今天要处理 / 列表的委托事件
+  document.getElementById("todayList").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (!b) return;
+    handleAction(b.getAttribute("data-act"), b);
+  });
+  document.getElementById("dataBanner").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (b && b.getAttribute("data-act") === "openApi"){
+      switchTab("ride");
+      document.getElementById("apiBox").style.display = "block";
+      document.getElementById("apiKey").focus();
+    }
+  });
+  document.getElementById("activityList").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (b) handleAction(b.getAttribute("data-act"), b);
+  });
+  document.getElementById("ftpTrend").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (b) handleAction(b.getAttribute("data-act"), b);
+  });
+  document.getElementById("noteList").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (b) handleAction(b.getAttribute("data-act"), b);
+  });
+  document.getElementById("injuryList").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (b) handleAction(b.getAttribute("data-act"), b);
+  });
+  document.getElementById("goalList").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if (b) handleAction(b.getAttribute("data-act"), b);
+  });
+}
+
+function handleAction(act, btn){
+  if (act === "fillPlan"){
+    var d = btn.getAttribute("data-date");
+    switchTab("ride");
+    var box = document.getElementById("manualBox");
+    box.style.display = "block";
+    document.getElementById("mDate").value = d;
+    var p = state.plans[d];
+    document.getElementById("mName").value = p ? p.type : "";
+    document.getElementById("mName").focus();
+    return;
+  }
+  if (act === "skipPlan"){
+    var ds = btn.getAttribute("data-date");
+    if (state.plans[ds]) state.plans[ds].skipped = true;
+    saveData(); refreshAll(); toast("已标记为跳过");
+    return;
+  }
+  if (act === "goRide"){ switchTab("ride"); return; }
+  if (act === "pullToday"){ runPullToday(btn); return; }
+  if (act === "goTrend"){ switchTab("trend"); return; }
+  if (act === "genBrief"){
+    switchTab("ride");
+    document.getElementById("briefOut").value = buildBrief();
+    document.getElementById("btnGenBrief2").style.display = "inline-flex";
+    renderBriefMeta();
+    toast("简报已生成");
+    return;
+  }
+  if (act === "exportNow"){ exportJSON(); return; }
+  if (act === "dismissBackup"){
+    state.backupDismissed = true; saveData(); refreshAll(); return;
+  }
+  if (act === "delAct"){
+    var aid = btn.getAttribute("data-id");
+    askConfirm("删除训练记录", "确定删除这条训练记录吗？", function(){
+      state.activities = state.activities.filter(function(a){ return String(a.id) !== String(aid); });
+      saveData(); refreshAll(); toast("已删除");
+    });
+    return;
+  }
+  if (act === "delFtp"){
+    var fid = btn.getAttribute("data-id");
+    askConfirm("删除 FTP 记录", "确定删除吗？", function(){
+      state.ftpLog = state.ftpLog.filter(function(x){ return String(x.id) !== String(fid); });
+      saveData(); refreshAll();
+    });
+    return;
+  }
+  if (act === "delNote"){
+    var nid = btn.getAttribute("data-id");
+    askConfirm("删除教练结论", "删除后下次简报将不再包含这条，确定吗？", function(){
+      state.notes = state.notes.filter(function(x){ return String(x.id) !== String(nid); });
+      saveData(); refreshAll();
+    });
+    return;
+  }
+  if (act === "delInjury"){
+    var iid = btn.getAttribute("data-id");
+    askConfirm("删除记录", "确定删除吗？", function(){
+      state.injuries = state.injuries.filter(function(x){ return String(x.id) !== String(iid); });
+      saveData(); refreshAll();
+    });
+    return;
+  }
+  if (act === "toggleGoal"){
+    var gid = btn.getAttribute("data-id");
+    var g = state.goals.find(function(x){ return String(x.id) === String(gid); });
+    if (g){ g.status = (g.status === "已完成") ? "进行中" : "已完成"; saveData(); refreshAll(); }
+    return;
+  }
+  if (act === "delGoal"){
+    var gid2 = btn.getAttribute("data-id");
+    askConfirm("删除目标", "确定删除这个目标吗？", function(){
+      state.goals = state.goals.filter(function(x){ return String(x.id) !== String(gid2); });
+      saveData(); refreshAll();
+    });
+    return;
+  }
+}
+
+function initFormDefaults(){
+  var t = todayStr();
+  document.getElementById("pullEnd").value = t;
+  document.getElementById("pullStart").value = addDays(t, -30);
+  document.getElementById("apiKey").value = state.settings.apiKey || "";
+  document.getElementById("athleteId").value = state.settings.athleteId || "0";
+  document.getElementById("mDate").value = t;
+  document.getElementById("fDate").value = t;
+  document.getElementById("iDate").value = t;
+  document.getElementById("nDate").value = t;
+  document.getElementById("gDate").value = addDays(t, 90);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  loadData();
+  bindStatic();
+  initFormDefaults();
+  refreshAll();
+});
+</script>
+</body>
+</html>
