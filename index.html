@@ -829,64 +829,47 @@ function briefRideSection(a, ftp, heading){
   L.push("- 标准化功率 NP：" + num(a.np, 0) + " W");
   L.push("- 平均功率：" + num(a.avgPower, 0) + " W");
   if (ftp > 0 && a.np) L.push("- 强度因子 IF：" + (Number(a.np)/ftp).toFixed(2));
-  if (a.vi) L.push("- 变异性指数 VI：" + a.vi.toFixed(2) + "（区间课应接近 1.0，>1.1 说明功率波动大）");
-  if (a.ef) L.push("- 效率因子 EF（NP/平均心率）：" + a.ef.toFixed(2) + "（与历史同课时对比判断有氧效率变化）");
+  if (a.vi) L.push("- 变异性指数 VI：" + a.vi.toFixed(2));
+  if (a.ef) L.push("- 效率因子 EF（NP/平均心率）：" + a.ef.toFixed(2));
   if (a.powerHr) L.push("- 功率/心率比：" + a.powerHr.toFixed(2));
   if (a.cadence) L.push("- 平均踏频：" + num(a.cadence,0) + " rpm");
   if (a.avgSpeed) L.push("- 平均速度：" + (a.avgSpeed*3.6).toFixed(1) + " km/h");
   if (a.trimp) L.push("- TRIMP（心率负荷）：" + num(a.trimp,0));
   if (a.hrr) L.push("- 心率恢复 HRR：" + num(a.hrr,0) + " bpm");
-  L.push("- 做功：" + num(a.kilojoules, 0) + " kJ" + (a.calories ? "｜热量 " + num(a.calories,0) + " kcal" : ""));
-  if (a.carbsUsed || a.carbsIngested) L.push("- 碳水：消耗 " + num(a.carbsUsed,0) + " g｜摄入 " + num(a.carbsIngested,0) + " g");
   L.push("- 爬升：" + num(a.elevation, 0) + " m");
   if (a.coastingSec) L.push("- 滑行：" + Math.floor(a.coastingSec/60) + "m" + Math.round(a.coastingSec%60) + "s（占 " + ((a.coastingSec/(a.durationSec||1))*100).toFixed(1) + "%）");
   L.push("- 平均心率：" + num(a.avgHr, 0) + " bpm｜最大心率：" + num(a.maxHr, 0) + " bpm");
-  if (a.decoupling) L.push("- 功率/心率解耦：" + num(a.decoupling, 1) + " %（>5% 提示有氧耐力不足或补给/散热问题）");
+  if (a.decoupling) L.push("- 功率/心率解耦：" + num(a.decoupling, 1) + " %");
   if (a.rpe) L.push("- RPE（主观强度）：" + num(a.rpe,0) + (a.feel ? "｜感受 " + num(a.feel,0) + "/10" : ""));
   if (a.ctl || a.atl) L.push("- 当日体能状态：CTL " + num(a.ctl,1) + "｜ATL " + num(a.atl,1) + "｜TSB " + num(a.tsb,1));
   if (a.eFtp || a.rollingFtp) L.push("- 本课估算 FTP：eFTP " + num(a.eFtp,0) + " W｜滚动 eFTP " + num(a.rollingFtp,0) + " W");
   if (a.strain) L.push("- 体力（strain）：" + num(a.strain,1));
   if (a.notes) L.push("- 主观备注：" + a.notes);
 
-  // 分段统计（间歇课的核心依据）
-  var gs = a.intervalGroups || [];
+  // 分段统计：只输出逐段明细 + 功率区间分布（intervals.icu 的 icu_groups 自动分组不可靠，不进简报）
   var laps = (a.intervals || []).filter(function(v){ return v.type === "WORK"; });
   if (!laps.length && (a.intervals || []).length) laps = a.intervals;
-  if (gs.length || laps.length){
+  var zt = (a.zoneTimes || []).filter(function(z){ return z && z.secs > 0; });
+  if (laps.length){
     L.push("");
     L.push("【分段统计】");
-    if (gs.length){
-      L.push("| 组 | 次数 | 单段时长 | 平均功率 | NP | 心率 | 踏频 | 负荷 |");
-      L.push("|---|---|---|---|---|---|---|---|");
-      gs.forEach(function(g){
-        L.push("| " + (g.label || "分组") + " | " + num(g.count,0) + " | " + (g.count ? fmtSec(g.sec/(g.count||1)) : fmtSec(g.sec)) +
-          " | " + num(g.ap,0) + " W | " + num(g.np,0) + " W | " + num(g.hr,0) + " | " + num(g.cad,0) + " | " + num(g.load,0) + " |");
-      });
-    }
-    if (laps.length){
-      L.push("");
-      L.push("逐段明细（WORK 段，共 " + laps.length + " 段）：");
-      L.push("| 段 | 时长 | 平均功率 | NP | 心率 | 踏频 | 末段 W'bal |");
-      L.push("|---|---|---|---|---|---|---|");
-      laps.slice(0, 15).forEach(function(v, i){
-        L.push("| " + (i + 1) + " | " + fmtSec(v.sec) + " | " + num(v.ap,0) + " W | " + num(v.np,0) + " W | " +
-          num(v.hr,0) + " | " + num(v.cad,0) + " | " + (v.wbalEnd ? num(v.wbalEnd,0) + " J" : "—") + " |");
-      });
-      if (laps.length > 15) L.push("（仅列出前 15 段，共 " + laps.length + " 段）");
-      L.push("请重点判断：① 逐段功率是否衰减（第 1 段 vs 最后一段）；② 心率是否逐段上漂（有氧能力是否顶住）；③ 各段功率是否落在目标区间。");
-    }
-    var zt = (a.zoneTimes || []).filter(function(z){ return z && z.secs > 0; });
-    if (zt.length){
-      var tot = zt.reduce(function(s2, z){ return s2 + z.secs; }, 0);
-      L.push("");
-      L.push("功率区间时间分布：" + zt.map(function(z){
-        return "Z" + z.id + " " + Math.round(z.secs/60) + "分(" + (tot ? Math.round(z.secs/tot*100) : 0) + "%)";
-      }).join("｜") + (a.polarization ? "｜极化指数 PI " + num(a.polarization,2) : ""));
-    }
-    var pg = intervalProgress(a);
-    if (pg) L.push("历史同课对比：本次「" + pg.label + "」平均功率 " + num(pg.ap,0) + " W，上次（" + pg.prevDate + "）" + num(pg.prevAp,0) +
-      " W，" + (pg.delta >= 0 ? "+" : "") + pg.delta + "%（" + pg.days + " 天前）。");
-  } else if (a.source === "icu"){
+    L.push("逐段明细（WORK 段，共 " + laps.length + " 段）：");
+    L.push("| 段 | 时长 | 平均功率 | NP | 心率 | 踏频 | 末段 W'bal |");
+    L.push("|---|---|---|---|---|---|---|");
+    laps.slice(0, 15).forEach(function(v, i){
+      L.push("| " + (i + 1) + " | " + fmtSec(v.sec) + " | " + num(v.ap,0) + " W | " + num(v.np,0) + " W | " +
+        num(v.hr,0) + " | " + num(v.cad,0) + " | " + (v.wbalEnd ? num(v.wbalEnd,0) + " J" : "—") + " |");
+    });
+    if (laps.length > 15) L.push("（仅列出前 15 段，共 " + laps.length + " 段）");
+  }
+  if (zt.length){
+    var tot = zt.reduce(function(s2, z){ return s2 + z.secs; }, 0);
+    L.push("");
+    L.push("功率区间时间分布：" + zt.map(function(z){
+      return "Z" + z.id + " " + Math.round(z.secs/60) + "分(" + (tot ? Math.round(z.secs/tot*100) : 0) + "%)";
+    }).join("｜") + (a.polarization ? "｜极化指数 PI " + num(a.polarization,2) : ""));
+  }
+  if (!laps.length && !zt.length && a.source === "icu"){
     L.push("");
     L.push("【分段统计】这次训练没有自动分段数据（可能是连续骑行，或尚未补拉分段）。");
   }
@@ -904,8 +887,6 @@ function buildRideOnly(){
     L.push("");
   }
   L = L.concat(briefRideSection(a, ftp, "# 本次骑行（" + (a ? a.date : todayStr()) + "）"));
-  L.push("");
-  L.push("请基于以上数据分析这次训练：① 各分段功率是否稳定、有无衰减；② 心率是否逐段上漂；③ 是否达成本课目标；④ 下一次课怎么安排。严格使用以上数据，不要臆造任何数字。");
   return L.join("\n");
 }
 
