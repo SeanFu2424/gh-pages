@@ -231,9 +231,10 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
   .todo .acts{width:100%;padding-left:18px}
   .row{flex-wrap:wrap}
   .row .acts{width:100%;padding-left:0}
-  /* 今日卡片：一键拉取按钮在手机上独占一行、全宽、更好按 */
+  /* 今日卡片：两个操作按钮在手机上平分一行，全宽更好按 */
   #todayCard .card-h{flex-wrap:wrap;gap:6px 8px}
-  #btnPullToday{width:100%;min-height:46px;justify-content:center;font-size:14px}
+  #todayCard .card-h .right{width:100%;margin-left:0;gap:6px}
+  #todayCard .card-h .right button{flex:1 1 0;min-width:0;min-height:46px;justify-content:center;font-size:14px;padding:0 10px}
   .todo .acts button{min-height:40px;padding:0 12px}
 }
 </style>
@@ -276,6 +277,7 @@ select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http:
       <h2 data-page-node-id="rGiYKxhjVpJ9H6OlXpaagi">今天要处理</h2>
       <span class="cnt" id="todayDate" data-page-node-id="r9flBKkqNKKtWtGW9ZDttT"></span>
       <div class="right">
+        <button class="sm" id="btnGoManual" title="手动补录一次训练"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>去录入</span></button>
         <button class="sm primary" id="btnPullToday"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg><span id="btnPullTodayTxt">拉取今日数据</span></button>
       </div>
     </div>
@@ -1170,17 +1172,14 @@ function renderToday(){
     items.push({
       cls: tp ? "warn" : "",
       title: tp ? "今日计划：「" + esc(tp.type) + "」尚未录入" : "今天还没有训练记录",
-      desc: tp ? (tp.detail ? esc(tp.detail) : "按计划完成后回来录入或拉取数据") : "完成骑行后拉取数据或手动补录",
-      acts: '<button class="tiny primary" data-act="pullToday">拉取今日</button>' +
-            '<button class="tiny" data-act="goRide">去录入</button>'
+      desc: tp ? (tp.detail ? esc(tp.detail) : "按计划完成后回来录入或拉取数据") : "完成骑行后拉取数据或手动补录"
     });
   } else {
     items.push({
       cls: "",
       title: "今日已记录：" + esc(todayAct.name || "未命名骑行"),
       desc: "TSS " + num(todayAct.load,0) + " · " + num((Number(todayAct.distance)||0)/1000,1) + " km · NP " + num(todayAct.np,0) + " W",
-      acts: '<button class="tiny" data-act="genBrief">生成简报</button>' +
-            '<button class="tiny" data-act="pullToday">重新同步</button>'
+      acts: '<button class="tiny" data-act="genBrief">生成简报</button>'
     });
   }
 
@@ -1212,7 +1211,7 @@ function renderToday(){
   box.innerHTML = items.map(function(it){
     return '<div class="todo ' + it.cls + '"><span class="dot"></span><div class="body">' +
       '<div class="t">' + it.title + '</div><div class="d">' + it.desc + '</div></div>' +
-      '<div class="acts">' + it.acts + '</div></div>';
+      (it.acts ? '<div class="acts">' + it.acts + '</div>' : '') + '</div>';
   }).join("");
 }
 
@@ -1609,7 +1608,7 @@ function renderSyncLine(){
   el.className = "sync-line" + (stale ? " stale" : "");
   el.innerHTML = '<span class="sdot"></span>上次同步：' + esc(fmtSyncTime(last)) +
     ' · 共 ' + state.activities.length + ' 条训练 / ' + state.wellness.length + ' 天体能' +
-    (stale ? ' · <button class="tiny" data-act="pullToday">立即同步</button>' : '');
+    (stale ? ' · 已 ' + age + ' 天未同步' : '');
 }
 
 function renderApiStatus(){
@@ -2201,6 +2200,25 @@ function bindStatic(){
   var pullTodayBtn = document.getElementById("btnPullToday");
   if (pullTodayBtn) pullTodayBtn.addEventListener("click", function(){ runPullToday(pullTodayBtn); });
 
+  // 去录入：切到今日训练页 → 展开手动补录 → 滚到表单
+  function goManualEntry(){
+    switchTab("ride");
+    var box = document.getElementById("manualBox");
+    if (box){
+      box.style.display = "block";
+      var d = document.getElementById("mDate");
+      if (d && !d.value) d.value = todayStr();
+    }
+    setTimeout(function(){
+      var card = box && box.closest ? box.closest(".card") : null;
+      if (card && card.scrollIntoView) card.scrollIntoView({ behavior: "smooth", block: "start" });
+      var first = document.getElementById("mName");
+      if (first && first.focus) first.focus({ preventScroll: true });
+    }, 90);
+  }
+  var gm = document.getElementById("btnGoManual");
+  if (gm) gm.addEventListener("click", goManualEntry);
+
   // 手动补录
   document.getElementById("btnManual").addEventListener("click", function(){
     var b = document.getElementById("manualBox");
@@ -2524,7 +2542,7 @@ function handleAction(act, btn){
     saveData(); refreshAll(); toast("已标记为跳过");
     return;
   }
-  if (act === "goRide"){ switchTab("ride"); return; }
+  if (act === "goRide"){ goManualEntry(); return; }
   if (act === "pullToday"){ runPullToday(btn); return; }
   if (act === "goTrend"){ switchTab("trend"); return; }
   if (act === "genBrief"){
